@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B77074031FB60C2100D7FBAE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77074021FB60C2100D7FBAE /* TabBarController.swift */; };
+		B77074061FB60CAD00D7FBAE /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77074051FB60CAD00D7FBAE /* Utility.swift */; };
+		B77074081FB60D7300D7FBAE /* ActiveTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77074071FB60D7300D7FBAE /* ActiveTeam.swift */; };
+		B770740B1FB60EED00D7FBAE /* PlayerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B770740A1FB60EED00D7FBAE /* PlayerTableView.swift */; };
+		B770740D1FB60F0400D7FBAE /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B770740C1FB60F0400D7FBAE /* NavBarController.swift */; };
+		B770740F1FB6345100D7FBAE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B770740E1FB6345100D7FBAE /* SettingsViewController.swift */; };
 		B7C413B51FB52F7100A9763D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C413B41FB52F7100A9763D /* AppDelegate.swift */; };
-		B7C413B71FB52F7100A9763D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C413B61FB52F7100A9763D /* ViewController.swift */; };
 		B7C413BA1FB52F7100A9763D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C413B81FB52F7100A9763D /* Main.storyboard */; };
 		B7C413BD1FB52F7100A9763D /* soccer_stats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B7C413BB1FB52F7100A9763D /* soccer_stats.xcdatamodeld */; };
 		B7C413BF1FB52F7100A9763D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C413BE1FB52F7100A9763D /* Assets.xcassets */; };
 		B7C413C21FB52F7100A9763D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C413C01FB52F7100A9763D /* LaunchScreen.storyboard */; };
 		B7C413CD1FB52F7100A9763D /* soccer_statsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C413CC1FB52F7100A9763D /* soccer_statsTests.swift */; };
 		B7C413D81FB52F7100A9763D /* soccer_statsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C413D71FB52F7100A9763D /* soccer_statsUITests.swift */; };
+		B7D054331FB54FC80085DEA5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D054321FB54FC80085DEA5 /* Player.swift */; };
+		B7D054351FB553810085DEA5 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D054341FB553810085DEA5 /* StatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B77074021FB60C2100D7FBAE /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		B77074051FB60CAD00D7FBAE /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		B77074071FB60D7300D7FBAE /* ActiveTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveTeam.swift; sourceTree = "<group>"; };
+		B770740A1FB60EED00D7FBAE /* PlayerTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableView.swift; sourceTree = "<group>"; };
+		B770740C1FB60F0400D7FBAE /* NavBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
+		B770740E1FB6345100D7FBAE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B7C413B11FB52F7100A9763D /* soccer-stats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "soccer-stats.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C413B41FB52F7100A9763D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B7C413B61FB52F7100A9763D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B7C413B91FB52F7100A9763D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B7C413BC1FB52F7100A9763D /* soccer_stats.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = soccer_stats.xcdatamodel; sourceTree = "<group>"; };
 		B7C413BE1FB52F7100A9763D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +61,8 @@
 		B7C413D31FB52F7100A9763D /* soccer-statsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "soccer-statsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C413D71FB52F7100A9763D /* soccer_statsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soccer_statsUITests.swift; sourceTree = "<group>"; };
 		B7C413D91FB52F7100A9763D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7D054321FB54FC80085DEA5 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		B7D054341FB553810085DEA5 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +90,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B77074041FB60C6600D7FBAE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B77074051FB60CAD00D7FBAE /* Utility.swift */,
+				B7C413B41FB52F7100A9763D /* AppDelegate.swift */,
+				B7C413BE1FB52F7100A9763D /* Assets.xcassets */,
+				B7C413C31FB52F7100A9763D /* Info.plist */,
+				B7C413BB1FB52F7100A9763D /* soccer_stats.xcdatamodeld */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B77074091FB60EE000D7FBAE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B770740A1FB60EED00D7FBAE /* PlayerTableView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		B7C413A81FB52F7100A9763D = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +133,11 @@
 		B7C413B31FB52F7100A9763D /* soccer-stats */ = {
 			isa = PBXGroup;
 			children = (
-				B7C413B41FB52F7100A9763D /* AppDelegate.swift */,
-				B7C413B61FB52F7100A9763D /* ViewController.swift */,
-				B7C413B81FB52F7100A9763D /* Main.storyboard */,
-				B7C413BE1FB52F7100A9763D /* Assets.xcassets */,
-				B7C413C01FB52F7100A9763D /* LaunchScreen.storyboard */,
-				B7C413C31FB52F7100A9763D /* Info.plist */,
-				B7C413BB1FB52F7100A9763D /* soccer_stats.xcdatamodeld */,
+				B7D0542F1FB54F0B0085DEA5 /* Models */,
+				B77074091FB60EE000D7FBAE /* Views */,
+				B7D0542C1FB54EE10085DEA5 /* Controllers */,
+				B7D0542E1FB54EF60085DEA5 /* Storyboards */,
+				B77074041FB60C6600D7FBAE /* Resources */,
 			);
 			path = "soccer-stats";
 			sourceTree = "<group>";
@@ -126,6 +158,35 @@
 				B7C413D91FB52F7100A9763D /* Info.plist */,
 			);
 			path = "soccer-statsUITests";
+			sourceTree = "<group>";
+		};
+		B7D0542C1FB54EE10085DEA5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B7D054341FB553810085DEA5 /* StatsViewController.swift */,
+				B77074021FB60C2100D7FBAE /* TabBarController.swift */,
+				B770740C1FB60F0400D7FBAE /* NavBarController.swift */,
+				B770740E1FB6345100D7FBAE /* SettingsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B7D0542E1FB54EF60085DEA5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B7C413B81FB52F7100A9763D /* Main.storyboard */,
+				B7C413C01FB52F7100A9763D /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		B7D0542F1FB54F0B0085DEA5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B7D054321FB54FC80085DEA5 /* Player.swift */,
+				B77074071FB60D7300D7FBAE /* ActiveTeam.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +325,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7C413B71FB52F7100A9763D /* ViewController.swift in Sources */,
+				B770740B1FB60EED00D7FBAE /* PlayerTableView.swift in Sources */,
 				B7C413B51FB52F7100A9763D /* AppDelegate.swift in Sources */,
+				B77074031FB60C2100D7FBAE /* TabBarController.swift in Sources */,
+				B770740F1FB6345100D7FBAE /* SettingsViewController.swift in Sources */,
+				B77074081FB60D7300D7FBAE /* ActiveTeam.swift in Sources */,
+				B77074061FB60CAD00D7FBAE /* Utility.swift in Sources */,
+				B7D054331FB54FC80085DEA5 /* Player.swift in Sources */,
+				B7D054351FB553810085DEA5 /* StatsViewController.swift in Sources */,
+				B770740D1FB60F0400D7FBAE /* NavBarController.swift in Sources */,
 				B7C413BD1FB52F7100A9763D /* soccer_stats.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,6 +587,7 @@
 				B7C413DE1FB52F7100A9763D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B7C413DF1FB52F7100A9763D /* Build configuration list for PBXNativeTarget "soccer-statsTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +596,7 @@
 				B7C413E11FB52F7100A9763D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B7C413E21FB52F7100A9763D /* Build configuration list for PBXNativeTarget "soccer-statsUITests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +605,7 @@
 				B7C413E41FB52F7100A9763D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

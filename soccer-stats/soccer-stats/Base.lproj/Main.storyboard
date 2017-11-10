@@ -1,26 +1,255 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dax-3O-uDg">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ilT-Bi-7eJ">
+                                <rect key="frame" x="0.0" y="44" width="1024" height="695"/>
+                                <color key="backgroundColor" red="0.85098039215686272" green="0.85490196078431369" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ilT-Bi-7eJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="dev-p1-CAN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ilT-Bi-7eJ" secondAttribute="trailing" constant="-20" id="oHL-Xr-1HD"/>
+                            <constraint firstItem="ilT-Bi-7eJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="pBk-d5-b3e"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ilT-Bi-7eJ" secondAttribute="bottom" constant="-20" id="xG0-GO-8q0"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="6ms-IU-Buy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2204" y="-63"/>
+        </scene>
+        <!--Stats View Controller-->
+        <scene sceneID="PHu-Yu-0f0">
+            <objects>
+                <viewController id="ze4-Y4-5Qf" customClass="StatsViewController" customModule="soccer_stats" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yHA-6t-gr6"/>
+                        <viewControllerLayoutGuide type="bottom" id="UUM-pR-sEb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TYE-Fd-uof">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2L3-Pp-79T">
+                                <rect key="frame" x="-20" y="44" width="1064" height="744"/>
+                                <color key="backgroundColor" red="0.85098039219999999" green="0.85490196080000003" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2L3-Pp-79T" secondAttribute="trailing" constant="-20" id="0Xj-DS-Fur"/>
+                            <constraint firstAttribute="bottom" secondItem="2L3-Pp-79T" secondAttribute="bottom" constant="-20" id="29r-xK-UOS"/>
+                            <constraint firstItem="2L3-Pp-79T" firstAttribute="top" secondItem="yHA-6t-gr6" secondAttribute="bottom" constant="-20" id="8rq-Go-8Xp"/>
+                            <constraint firstItem="2L3-Pp-79T" firstAttribute="leading" secondItem="TYE-Fd-uof" secondAttribute="leading" constant="-20" id="vW6-AK-UPe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PEg-6c-OVT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ld-YS-lFW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2204" y="583"/>
+        </scene>
+        <!--Nav Bar Controller-->
+        <scene sceneID="egh-GG-KSx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0xj-ZO-kj1" customClass="NavBarController" customModule="soccer_stats" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="iRg-yG-Wzf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" id="IsP-Ok-oPA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9Vn-vD-gOq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wze-t7-Fk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1528" y="-63"/>
+        </scene>
+        <!--Stats-->
+        <scene sceneID="Sby-Z2-gVU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bi3-tH-Cfx" customClass="NavBarController" customModule="soccer_stats" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stats" id="iHh-fZ-jKq"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AKe-yd-ZC8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ze4-Y4-5Qf" kind="relationship" relationship="rootViewController" id="x1K-xA-Ayc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yge-qa-g3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1528" y="583"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZzI-mI-2Ra">
+            <objects>
+                <viewController id="nCA-bG-cKV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DRn-lO-xKv"/>
+                        <viewControllerLayoutGuide type="bottom" id="bvH-UQ-jTV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jcl-IL-s5B">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdF-ug-iBW">
+                                <rect key="frame" x="-20" y="-20" width="1064" height="759"/>
+                                <color key="backgroundColor" red="0.85098039219999999" green="0.85490196080000003" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bvH-UQ-jTV" firstAttribute="top" secondItem="kdF-ug-iBW" secondAttribute="bottom" constant="-20" id="6rJ-Gk-aAg"/>
+                            <constraint firstItem="kdF-ug-iBW" firstAttribute="top" secondItem="Jcl-IL-s5B" secondAttribute="top" constant="-20" id="Jz2-aa-Pzp"/>
+                            <constraint firstItem="kdF-ug-iBW" firstAttribute="leading" secondItem="Jcl-IL-s5B" secondAttribute="leading" constant="-20" id="OUo-rl-77G"/>
+                            <constraint firstAttribute="trailing" secondItem="kdF-ug-iBW" secondAttribute="trailing" constant="-20" id="dX6-rR-dvO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="usn-D5-1ro"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3hR-8O-3bV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2204" y="1238"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="21k-0j-py0">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dax-3O-uDg" customClass="TabBarController" customModule="soccer_stats" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="6Aa-9b-ubR">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="0xj-ZO-kj1" kind="relationship" relationship="viewControllers" id="b2j-rx-w1W"/>
+                        <segue destination="Bi3-tH-Cfx" kind="relationship" relationship="viewControllers" id="zM1-73-pct"/>
+                        <segue destination="Amy-uo-uyn" kind="relationship" relationship="viewControllers" id="hqD-Fp-C0P"/>
+                        <segue destination="cY1-lL-BMo" kind="relationship" relationship="viewControllers" id="471-Aw-QDW"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NVn-ty-37s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="751" y="1356"/>
+        </scene>
+        <!--My Team-->
+        <scene sceneID="wRf-Pp-t42">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Amy-uo-uyn" customClass="NavBarController" customModule="soccer_stats" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Team" id="PpL-2I-rUq"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rzg-PN-9DS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nCA-bG-cKV" kind="relationship" relationship="rootViewController" id="mFq-YX-BaK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gJ1-Hx-Cx3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1528" y="1238"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="OTu-4o-dwe">
+            <objects>
+                <viewController id="g6Z-Lh-FQR" customClass="SettingsViewController" customModule="soccer_stats" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hJx-S0-UZa"/>
+                        <viewControllerLayoutGuide type="bottom" id="B3m-ua-glr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jc7-tW-tqr">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wyu-ii-g4R">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="719"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lnr-fz-Qma">
+                                        <rect key="frame" x="495" y="344.5" width="34" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYh-mW-C2W">
+                                                <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
+                                                <state key="normal" title="Sync"/>
+                                                <connections>
+                                                    <action selector="syncButtonClicked:" destination="g6Z-Lh-FQR" eventType="touchUpInside" id="Kwu-zp-X0P"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.85098039219999999" green="0.85490196080000003" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="lnr-fz-Qma" firstAttribute="centerX" secondItem="wyu-ii-g4R" secondAttribute="centerX" id="YoF-W2-qtY"/>
+                                    <constraint firstItem="lnr-fz-Qma" firstAttribute="centerY" secondItem="wyu-ii-g4R" secondAttribute="centerY" id="ja5-ZD-4o3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wyu-ii-g4R" firstAttribute="leading" secondItem="jc7-tW-tqr" secondAttribute="leadingMargin" constant="-20" id="J1C-eh-QPQ"/>
+                            <constraint firstItem="B3m-ua-glr" firstAttribute="top" secondItem="wyu-ii-g4R" secondAttribute="bottom" id="Zo1-IK-006"/>
+                            <constraint firstItem="wyu-ii-g4R" firstAttribute="top" secondItem="jc7-tW-tqr" secondAttribute="topMargin" id="fw6-7c-bhF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wyu-ii-g4R" secondAttribute="trailing" constant="-20" id="zhU-PH-hOu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4Jx-df-7Ol"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bMR-RD-GZn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2203.7109375" y="1897.65625"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="lo8-vc-kF8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cY1-lL-BMo" customClass="NavBarController" customModule="soccer_stats" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" id="HnC-9o-OZ7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iL2-jb-b1v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="g6Z-Lh-FQR" kind="relationship" relationship="rootViewController" id="NMe-Ke-Mwl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wwP-8W-iz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1523.4375" y="1897.65625"/>
         </scene>
     </scenes>
 </document>
