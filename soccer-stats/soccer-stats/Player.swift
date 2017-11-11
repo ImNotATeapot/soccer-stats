@@ -21,5 +21,5 @@ class Player:NSObject{
         self.position = position;
         self.number = number;
     }
-
+    
 }
