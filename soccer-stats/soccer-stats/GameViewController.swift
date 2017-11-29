@@ -65,8 +65,8 @@ class GameViewController:UIViewController, ActionButtonDelegate {
         fieldImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.positionTapped)))
         fieldImageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.positionPanned)))
         
-        successButton.color = UIColor(colorLiteralRed: 81/255, green: 167/255, blue: 249/255, alpha: 1.0)
-        failButton.color = UIColor(colorLiteralRed: 236/255, green: 93/255, blue: 87/255, alpha: 1.0)
+        successButton.color = UIColor(red: 81/255, green: 167/255, blue: 249/255, alpha: 1.0)
+        failButton.color = UIColor(red: 236/255, green: 93/255, blue: 87/255, alpha: 1.0)
         
         buttonArray.append(assistButton)
         buttonArray.append(interceptionButton)
@@ -80,7 +80,7 @@ class GameViewController:UIViewController, ActionButtonDelegate {
         }
     }
     
-    func positionTapped(_ tapGestureRecognizer: UITapGestureRecognizer){
+    @objc func positionTapped(_ tapGestureRecognizer: UITapGestureRecognizer){
         if positionIsSelected == false {
             positionIsSelected = true
             count += 1
@@ -99,7 +99,7 @@ class GameViewController:UIViewController, ActionButtonDelegate {
         }
     }
     
-    func positionPanned(_ panGestureRecognizer: UIPanGestureRecognizer) {
+    @objc func positionPanned(_ panGestureRecognizer: UIPanGestureRecognizer) {
         
         let location = panGestureRecognizer.location(in: fieldImageView)
         var arrowPath:UIBezierPath = UIBezierPath()
