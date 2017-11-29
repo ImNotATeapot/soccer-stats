@@ -15,6 +15,10 @@ class Player:NSObject{
     var position:String = ""
     var number:Int = 0
     
+    override init() {
+        
+    }
+    
     init(firstName:String, lastName:String, position:String, number:Int){
         self.firstName = firstName;
         self.lastName = lastName;

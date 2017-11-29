@@ -167,11 +167,11 @@
 		B7D0542C1FB54EE10085DEA5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B783DD0B1FB695D700F9EE33 /* GameViewController.swift */,
 				B7D054341FB553810085DEA5 /* StatsViewController.swift */,
 				B77074021FB60C2100D7FBAE /* TabBarController.swift */,
 				B770740C1FB60F0400D7FBAE /* NavBarController.swift */,
 				B770740E1FB6345100D7FBAE /* SettingsViewController.swift */,
-				B783DD0B1FB695D700F9EE33 /* GameViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

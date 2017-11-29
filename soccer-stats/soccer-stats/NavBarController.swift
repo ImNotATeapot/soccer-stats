@@ -6,7 +6,6 @@
 //
 //
 
-import Foundation
 import UIKit
 
 class NavBarController: UINavigationController {
@@ -20,5 +19,8 @@ class NavBarController: UINavigationController {
         self.navigationBar.layer.shadowRadius = 4.0
         self.navigationBar.layer.shadowOpacity = 1.0
         self.navigationBar.layer.masksToBounds = false
+//        self.navigationBar.
+//        self.navigationBar.setBackgroundImage(UIImage(named: "field"), for: .default)//.backgroundImage(for: .default) = UIImage(named: "field")
+//        self.navigationBar//navigationBar.navigation
     }
 }

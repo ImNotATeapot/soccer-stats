@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="LineModel" representedClassName="LineModel" syncable="YES" codeGenerationType="class">
+        <relationship name="hasPoints" optional="YES" toMany="YES" minCount="2" maxCount="2" deletionRule="Cascade" ordered="YES" destinationEntity="PointModel" syncable="YES"/>
+    </entity>
     <entity name="PlayerModel" representedClassName="PlayerModel" syncable="YES" codeGenerationType="class">
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="position" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasStats" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StatModel" syncable="YES"/>
+    </entity>
+    <entity name="PointModel" representedClassName="PointModel" syncable="YES" codeGenerationType="class">
+        <attribute name="coordX" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="coordY" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="StatModel" representedClassName="StatModel" syncable="YES" codeGenerationType="class">
+        <attribute name="action" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasLines" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LineModel" syncable="YES"/>
+        <relationship name="hasPoints" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PointModel" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PlayerModel" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="PlayerModel" positionX="-1523" positionY="-432" width="128" height="118"/>
+        <element name="StatModel" positionX="-1685" positionY="-367" width="128" height="88"/>
+        <element name="PointModel" positionX="-1739" positionY="-252" width="128" height="75"/>
+        <element name="LineModel" positionX="-1568" positionY="-270" width="128" height="58"/>
     </elements>
 </model>

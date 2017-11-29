@@ -43,14 +43,14 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJL-gj-bh7">
-                                                        <rect key="frame" x="124.5" y="99" width="42" height="30"/>
+                                                        <rect key="frame" x="125" y="99" width="42" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="42" id="eMw-hf-6Bh"/>
                                                         </constraints>
                                                         <state key="normal" title="Pause"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHN-8I-gjG">
-                                                        <rect key="frame" x="10" y="8.5" width="92" height="147.5"/>
+                                                        <rect key="frame" x="10" y="9" width="92" height="147"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="KHN-8I-gjG" secondAttribute="height" multiplier="5:8" id="eSu-P5-JQP"/>
                                                         </constraints>
@@ -59,7 +59,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzE-57-n8R">
-                                                        <rect key="frame" x="190" y="8.5" width="92" height="147.5"/>
+                                                        <rect key="frame" x="190" y="9" width="92" height="147"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="64"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -94,23 +94,22 @@
                                         <rect key="frame" x="697" y="234" width="307" height="278"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xkr-rl-gbZ">
-                                                <rect key="frame" x="10.5" y="10" width="286.5" height="216"/>
+                                                <rect key="frame" x="11" y="10" width="286" height="218"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6qp-A0-cIQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="286.5" height="41.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="286" height="42"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3q-Hd-eFQ" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="138.5" height="41.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3q-Hd-eFQ" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="42"/>
+                                                                <color key="tintColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <state key="normal" title="Pass">
-                                                                    <color key="titleColor" red="0.45882352941176469" green="0.8784313725490196" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="titleColor" red="0.36470588240000001" green="0.42352941179999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1u5-ha-Ctv" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
-                                                                <rect key="frame" x="148.5" y="0.0" width="138" height="41.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1u5-ha-Ctv" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
+                                                                <rect key="frame" x="148" y="0.0" width="138" height="42"/>
                                                                 <state key="normal" title="Shot">
-                                                                    <color key="titleColor" red="0.45882352939999999" green="0.87843137250000003" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="titleColor" red="0.36470588240000001" green="0.42352941179999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                             </button>
                                                         </subviews>
@@ -120,19 +119,18 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AKH-H6-h0i">
-                                                        <rect key="frame" x="0.0" y="51.5" width="286.5" height="41.5"/>
+                                                        <rect key="frame" x="0.0" y="52" width="286" height="42"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9PY-D5-a4m" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="138.5" height="41.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9PY-D5-a4m" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="42"/>
                                                                 <state key="normal" title="Tackle">
-                                                                    <color key="titleColor" red="0.45882352939999999" green="0.87843137250000003" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="titleColor" red="0.36470588240000001" green="0.42352941179999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rU1-Pl-H6e" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
-                                                                <rect key="frame" x="148.5" y="0.0" width="138" height="41.5"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rU1-Pl-H6e" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
+                                                                <rect key="frame" x="148" y="0.0" width="138" height="42"/>
                                                                 <state key="normal" title="Header">
-                                                                    <color key="titleColor" red="0.45882352939999999" green="0.87843137250000003" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="titleColor" red="0.36470588240000001" green="0.42352941179999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                             </button>
                                                         </subviews>
@@ -141,44 +139,37 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lFs-zi-p5Z">
-                                                        <rect key="frame" x="0.0" y="103" width="286.5" height="41.5"/>
+                                                        <rect key="frame" x="0.0" y="104" width="286" height="42"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iew-YB-9OG" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="41.5"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iew-YB-9OG" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="42"/>
                                                                 <state key="normal" title="Interception">
-                                                                    <color key="titleColor" red="0.45882352939999999" green="0.87843137250000003" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="titleColor" red="0.36470588240000001" green="0.42352941179999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f69-1T-tQ3" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
-                                                                <rect key="frame" x="148" y="0.0" width="138.5" height="41.5"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f69-1T-tQ3" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
+                                                                <rect key="frame" x="148" y="0.0" width="138" height="42"/>
                                                                 <state key="normal" title="Assist">
-                                                                    <color key="titleColor" red="0.45882352939999999" green="0.87843137250000003" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="titleColor" red="0.36470588240000001" green="0.42352941179999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                             </button>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="f69-1T-tQ3" firstAttribute="height" secondItem="iew-YB-9OG" secondAttribute="height" id="0m3-KN-6ud"/>
-                                                        </constraints>
                                                     </stackView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ml2-eW-Kvo">
-                                                        <rect key="frame" x="0.0" y="154.5" width="286.5" height="10"/>
+                                                        <rect key="frame" x="0.0" y="156" width="286" height="10"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="10" id="nWd-iO-fvU"/>
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WMt-iP-vJu">
-                                                        <rect key="frame" x="0.0" y="174.5" width="286.5" height="41.5"/>
+                                                        <rect key="frame" x="0.0" y="176" width="286" height="42"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50p-kx-FPR" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="138.5" height="41.5"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="41.5" id="atA-jB-22X"/>
-                                                                    <constraint firstAttribute="width" constant="138.5" id="hUR-iD-WXD"/>
-                                                                </constraints>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50p-kx-FPR" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="42"/>
                                                                 <state key="normal" title="Success"/>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Of-sO-Oh4" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
-                                                                <rect key="frame" x="148.5" y="0.0" width="138" height="41.5"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Of-sO-Oh4" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
+                                                                <rect key="frame" x="148" y="0.0" width="138" height="42"/>
                                                                 <state key="normal" title="Fail"/>
                                                             </button>
                                                         </subviews>
@@ -194,7 +185,6 @@
                                                     <constraint firstItem="9PY-D5-a4m" firstAttribute="width" secondItem="w3q-Hd-eFQ" secondAttribute="width" id="H1U-Ov-3SX"/>
                                                     <constraint firstItem="f69-1T-tQ3" firstAttribute="width" secondItem="w3q-Hd-eFQ" secondAttribute="width" id="WIH-Fv-Z2d"/>
                                                     <constraint firstItem="iew-YB-9OG" firstAttribute="width" secondItem="w3q-Hd-eFQ" secondAttribute="width" id="YYD-zh-sHO"/>
-                                                    <constraint firstItem="1u5-ha-Ctv" firstAttribute="height" secondItem="9PY-D5-a4m" secondAttribute="height" id="jdj-kh-ONq"/>
                                                     <constraint firstItem="rU1-Pl-H6e" firstAttribute="height" secondItem="iew-YB-9OG" secondAttribute="height" id="njO-X3-67a"/>
                                                     <constraint firstItem="50p-kx-FPR" firstAttribute="width" secondItem="w3q-Hd-eFQ" secondAttribute="width" id="qbZ-Cl-ZwG"/>
                                                 </constraints>
@@ -206,6 +196,9 @@
                                                     <constraint firstAttribute="width" constant="104" id="yif-NA-OU2"/>
                                                 </constraints>
                                                 <state key="normal" title="Clear Selection"/>
+                                                <connections>
+                                                    <action selector="clearSelection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sZA-gv-NwN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -237,25 +230,25 @@
                                         <rect key="frame" x="20" y="476" width="657" height="179"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5sm-nq-LU1">
-                                                <rect key="frame" x="27" y="18" width="603" height="143"/>
+                                                <rect key="frame" x="28" y="18" width="602" height="143"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ls1-DN-M4V" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="143.5" height="143"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="143" height="143"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="ls1-DN-M4V" secondAttribute="height" multiplier="1:1" id="x2l-Zl-0ES"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiO-8U-2r2" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
-                                                        <rect key="frame" x="153.5" y="0.0" width="143" height="143"/>
+                                                        <rect key="frame" x="153" y="0.0" width="143" height="143"/>
                                                         <state key="normal" title="Button"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNq-Ef-qsp" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
-                                                        <rect key="frame" x="306.5" y="0.0" width="143" height="143"/>
+                                                        <rect key="frame" x="306" y="0.0" width="143" height="143"/>
                                                         <state key="normal" title="Button"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldW-Ae-eNd" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
-                                                        <rect key="frame" x="459.5" y="0.0" width="143.5" height="143"/>
+                                                        <rect key="frame" x="459" y="0.0" width="143" height="143"/>
                                                         <state key="normal" title="Button"/>
                                                     </button>
                                                 </subviews>
@@ -272,7 +265,6 @@
                                         <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="ls1-DN-M4V" firstAttribute="height" secondItem="3Yy-Mo-FVZ" secondAttribute="height" multiplier="0.8" id="hAf-tf-Vk4"/>
-                                            <constraint firstAttribute="height" constant="179" id="okg-Bi-bOW"/>
                                             <constraint firstItem="5sm-nq-LU1" firstAttribute="centerY" secondItem="3Yy-Mo-FVZ" secondAttribute="centerY" id="pUn-M6-djZ"/>
                                             <constraint firstItem="5sm-nq-LU1" firstAttribute="centerX" secondItem="3Yy-Mo-FVZ" secondAttribute="centerX" id="xhv-ZM-obw"/>
                                         </constraints>
@@ -280,26 +272,21 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xm7-Af-YKo">
                                         <rect key="frame" x="697" y="532" width="307" height="111"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iBw-jr-m8B">
-                                                <rect key="frame" x="107" y="24" width="102" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iBw-jr-m8B">
+                                                <rect key="frame" x="11" y="9" width="286" height="94"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4py-Hh-MQ5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="102" height="30"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4py-Hh-MQ5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="286" height="42"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kq7-rm-5uj">
-                                                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kq7-rm-5uj">
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="42"/>
                                                                 <color key="backgroundColor" red="0.36470588235294116" green="0.42352941176470588" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="cif-20-3iX"/>
-                                                                    <constraint firstAttribute="width" constant="46" id="hTn-ce-d10"/>
-                                                                </constraints>
                                                                 <state key="normal" title="End Game">
                                                                     <color key="titleColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcV-pL-OrA">
-                                                                <rect key="frame" x="56" y="0.0" width="46" height="30"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcV-pL-OrA">
+                                                                <rect key="frame" x="148" y="0.0" width="138" height="42"/>
                                                                 <color key="backgroundColor" red="0.36470588235294116" green="0.42352941176470588" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Change Players">
                                                                     <color key="titleColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -311,22 +298,18 @@
                                                             <constraint firstItem="fcV-pL-OrA" firstAttribute="width" secondItem="Kq7-rm-5uj" secondAttribute="width" id="v9P-wK-wuz"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D0d-kS-oJk">
-                                                        <rect key="frame" x="0.0" y="30" width="102" height="30"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D0d-kS-oJk">
+                                                        <rect key="frame" x="0.0" y="52" width="286" height="42"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mII-o9-hsg">
-                                                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mII-o9-hsg">
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="42"/>
                                                                 <color key="backgroundColor" red="0.36470588235294116" green="0.42352941176470588" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="46" id="9ka-Hg-HWU"/>
-                                                                    <constraint firstAttribute="height" constant="30" id="x25-6n-Xy6"/>
-                                                                </constraints>
                                                                 <state key="normal" title="New Game">
                                                                     <color key="titleColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqd-Dd-vqr">
-                                                                <rect key="frame" x="56" y="0.0" width="46" height="30"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqd-Dd-vqr">
+                                                                <rect key="frame" x="148" y="0.0" width="138" height="42"/>
                                                                 <color key="backgroundColor" red="0.36470588235294116" green="0.42352941176470588" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Settings">
                                                                     <color key="titleColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -338,16 +321,23 @@
                                                 <constraints>
                                                     <constraint firstItem="Kqd-Dd-vqr" firstAttribute="width" secondItem="Kq7-rm-5uj" secondAttribute="width" id="R7G-GU-O9Y"/>
                                                     <constraint firstItem="Kqd-Dd-vqr" firstAttribute="height" secondItem="Kq7-rm-5uj" secondAttribute="height" id="UN6-eL-zSP"/>
+                                                    <constraint firstItem="mII-o9-hsg" firstAttribute="width" secondItem="Kq7-rm-5uj" secondAttribute="width" id="fur-ww-jbJ"/>
+                                                    <constraint firstItem="mII-o9-hsg" firstAttribute="height" secondItem="Kq7-rm-5uj" secondAttribute="height" id="hRa-GX-HBC"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="iBw-jr-m8B" firstAttribute="centerY" secondItem="xm7-Af-YKo" secondAttribute="centerY" id="6h2-pW-n3O"/>
+                                            <constraint firstItem="iBw-jr-m8B" firstAttribute="centerX" secondItem="xm7-Af-YKo" secondAttribute="centerX" id="xUk-e1-Pgd"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.85098039215686272" green="0.85490196078431369" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="opW-IM-2TP" firstAttribute="leading" secondItem="Dco-XM-FZC" secondAttribute="trailing" constant="20" id="13b-K2-uLe"/>
                                     <constraint firstItem="opW-IM-2TP" firstAttribute="height" secondItem="ilT-Bi-7eJ" secondAttribute="height" multiplier="0.25" id="1eV-JE-gVy"/>
+                                    <constraint firstItem="Kq7-rm-5uj" firstAttribute="width" secondItem="w3q-Hd-eFQ" secondAttribute="width" id="4nk-0b-C2c"/>
                                     <constraint firstItem="Kq7-rm-5uj" firstAttribute="height" secondItem="50p-kx-FPR" secondAttribute="height" id="7cW-30-geq"/>
                                     <constraint firstItem="Dco-XM-FZC" firstAttribute="leading" secondItem="ilT-Bi-7eJ" secondAttribute="leading" constant="20" id="8d3-1c-ArS"/>
                                     <constraint firstItem="6bN-di-Ly1" firstAttribute="width" secondItem="opW-IM-2TP" secondAttribute="width" id="ABM-64-8DO"/>
@@ -362,6 +352,7 @@
                                     <constraint firstItem="xm7-Af-YKo" firstAttribute="height" secondItem="ilT-Bi-7eJ" secondAttribute="height" multiplier="0.16" id="UCq-ja-ZyL"/>
                                     <constraint firstAttribute="trailing" secondItem="opW-IM-2TP" secondAttribute="trailing" constant="20" id="X1y-pr-tYD"/>
                                     <constraint firstItem="Kq7-rm-5uj" firstAttribute="width" secondItem="50p-kx-FPR" secondAttribute="width" id="eki-Hs-FZr"/>
+                                    <constraint firstItem="Kq7-rm-5uj" firstAttribute="height" secondItem="w3q-Hd-eFQ" secondAttribute="height" id="gN2-vp-Wjh"/>
                                     <constraint firstItem="3Yy-Mo-FVZ" firstAttribute="width" secondItem="Dco-XM-FZC" secondAttribute="width" id="gdZ-X5-fdO"/>
                                     <constraint firstItem="xm7-Af-YKo" firstAttribute="width" secondItem="6bN-di-Ly1" secondAttribute="width" id="jdu-xG-nls"/>
                                     <constraint firstItem="3Yy-Mo-FVZ" firstAttribute="leading" secondItem="ilT-Bi-7eJ" secondAttribute="leading" constant="20" id="qkR-28-9Qq"/>
@@ -379,6 +370,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6ms-IU-Buy"/>
+                    <connections>
+                        <outlet property="assistButton" destination="f69-1T-tQ3" id="sKa-W8-bSb"/>
+                        <outlet property="failButton" destination="1Of-sO-Oh4" id="r43-nx-NUs"/>
+                        <outlet property="fieldImageView" destination="FOM-cO-rsj" id="pbf-0e-8C1"/>
+                        <outlet property="headerButton" destination="rU1-Pl-H6e" id="dOP-cY-xoT"/>
+                        <outlet property="interceptionButton" destination="iew-YB-9OG" id="REc-La-GEg"/>
+                        <outlet property="passButton" destination="w3q-Hd-eFQ" id="eZS-x6-DMR"/>
+                        <outlet property="shotButton" destination="1u5-ha-Ctv" id="Gnw-1Y-xFQ"/>
+                        <outlet property="successButton" destination="50p-kx-FPR" id="ZUR-aS-i64"/>
+                        <outlet property="tackleButton" destination="9PY-D5-a4m" id="sVK-tU-0zH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
