@@ -13,7 +13,6 @@ protocol ActionButtonDelegate {
     func didSelectButton(_ actionButton:ActionButton)
 }
 
-@IBDesignable
 class ActionButton:UIButton {
     
     var ActionButtonDelegate:ActionButtonDelegate?

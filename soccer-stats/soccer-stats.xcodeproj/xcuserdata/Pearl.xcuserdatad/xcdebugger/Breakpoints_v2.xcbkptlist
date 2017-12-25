@@ -58,13 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "soccer-stats/GameViewController.swift"
-            timestampString = "533629204.767151"
+            timestampString = "533762696.708506"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
             endingLineNumber = "40"
-            landmarkName = "didSelectButton(_:)"
-            landmarkType = "7">
+            landmarkName = "GameViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

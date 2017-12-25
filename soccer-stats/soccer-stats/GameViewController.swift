@@ -12,6 +12,21 @@ import UIKit
 
 class GameViewController:UIViewController, ActionButtonDelegate {
     
+//    class button:UIButton {
+//        
+//        var buttonSelected:UIButton = UIButton()
+//        var action:String?
+//        var color:UIColor = UIColor.init(red: 117/255, green: 224/255, blue: 51/255, alpha: 1)
+//        
+//        
+//        override func draw(_ rect: CGRect) {
+//            self.layer.borderWidth = 2.0
+//            self.layer.borderColor = color.cgColor
+//            self.layer.cornerRadius = 12.0
+//            self.setTitleColor(UIColor.init(red: 83/255, green: 88/255, blue: 95/255, alpha: 1.0), for: .normal)
+//        }
+//    }
+    
     @IBOutlet weak var fieldImageView: UIImageView!
     @IBOutlet weak var failButton: ActionButton!
     @IBOutlet weak var successButton: ActionButton!
@@ -36,6 +51,8 @@ class GameViewController:UIViewController, ActionButtonDelegate {
     var startPoint:CGPoint = CGPoint()
     var endPoint:CGPoint = CGPoint()
     
+    var displayedPlayers:[NSManagedObject] = ActiveTeam.sharedInstance.activeTeam
+    
     func didSelectButton(_ actionButton: ActionButton) {
         if actionIsSelected {
             if actionButton.isSelected {
@@ -59,6 +76,7 @@ class GameViewController:UIViewController, ActionButtonDelegate {
             selectedActionButton = actionButton
         }
     }
+    
     
     override func viewDidLoad() {
         fieldImageView.isUserInteractionEnabled = true
