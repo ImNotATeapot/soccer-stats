@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B708E5DB1FF1E68900272B43 /* HomeNavigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B708E5DA1FF1E68900272B43 /* HomeNavigation.storyboard */; };
 		B77074031FB60C2100D7FBAE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77074021FB60C2100D7FBAE /* TabBarController.swift */; };
 		B77074061FB60CAD00D7FBAE /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77074051FB60CAD00D7FBAE /* Utility.swift */; };
 		B77074081FB60D7300D7FBAE /* ActiveTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77074071FB60D7300D7FBAE /* ActiveTeam.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B708E5DA1FF1E68900272B43 /* HomeNavigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeNavigation.storyboard; sourceTree = "<group>"; };
 		B77074021FB60C2100D7FBAE /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B77074051FB60CAD00D7FBAE /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		B77074071FB60D7300D7FBAE /* ActiveTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveTeam.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				B7C413B81FB52F7100A9763D /* Main.storyboard */,
+				B708E5DA1FF1E68900272B43 /* HomeNavigation.storyboard */,
 				B7C413C01FB52F7100A9763D /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7C413C21FB52F7100A9763D /* LaunchScreen.storyboard in Resources */,
+				B708E5DB1FF1E68900272B43 /* HomeNavigation.storyboard in Resources */,
 				B7C413BF1FB52F7100A9763D /* Assets.xcassets in Resources */,
 				B7C413BA1FB52F7100A9763D /* Main.storyboard in Resources */,
 			);
