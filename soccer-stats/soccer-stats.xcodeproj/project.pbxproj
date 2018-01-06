@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B708E5DB1FF1E68900272B43 /* HomeNavigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B708E5DA1FF1E68900272B43 /* HomeNavigation.storyboard */; };
+		B708E5DD1FF1F68500272B43 /* MyTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708E5DC1FF1F68500272B43 /* MyTeamViewController.swift */; };
 		B77074031FB60C2100D7FBAE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77074021FB60C2100D7FBAE /* TabBarController.swift */; };
 		B77074061FB60CAD00D7FBAE /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77074051FB60CAD00D7FBAE /* Utility.swift */; };
 		B77074081FB60D7300D7FBAE /* ActiveTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77074071FB60D7300D7FBAE /* ActiveTeam.swift */; };
@@ -23,7 +23,6 @@
 		B7C413CD1FB52F7100A9763D /* soccer_statsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C413CC1FB52F7100A9763D /* soccer_statsTests.swift */; };
 		B7C413D81FB52F7100A9763D /* soccer_statsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C413D71FB52F7100A9763D /* soccer_statsUITests.swift */; };
 		B7D054331FB54FC80085DEA5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D054321FB54FC80085DEA5 /* Player.swift */; };
-		B7D054351FB553810085DEA5 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D054341FB553810085DEA5 /* StatsViewController.swift */; };
 		B7F1C0EF1FB76BAF009C0B7A /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F1C0EE1FB76BAF009C0B7A /* ActionButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B708E5DA1FF1E68900272B43 /* HomeNavigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeNavigation.storyboard; sourceTree = "<group>"; };
+		B708E5DC1FF1F68500272B43 /* MyTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamViewController.swift; sourceTree = "<group>"; };
 		B77074021FB60C2100D7FBAE /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B77074051FB60CAD00D7FBAE /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		B77074071FB60D7300D7FBAE /* ActiveTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveTeam.swift; sourceTree = "<group>"; };
@@ -67,7 +66,6 @@
 		B7C413D71FB52F7100A9763D /* soccer_statsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soccer_statsUITests.swift; sourceTree = "<group>"; };
 		B7C413D91FB52F7100A9763D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7D054321FB54FC80085DEA5 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		B7D054341FB553810085DEA5 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		B7F1C0EE1FB76BAF009C0B7A /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				B783DD0B1FB695D700F9EE33 /* GameViewController.swift */,
-				B7D054341FB553810085DEA5 /* StatsViewController.swift */,
+				B708E5DC1FF1F68500272B43 /* MyTeamViewController.swift */,
 				B77074021FB60C2100D7FBAE /* TabBarController.swift */,
 				B770740C1FB60F0400D7FBAE /* NavBarController.swift */,
 				B770740E1FB6345100D7FBAE /* SettingsViewController.swift */,
@@ -182,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				B7C413B81FB52F7100A9763D /* Main.storyboard */,
-				B708E5DA1FF1E68900272B43 /* HomeNavigation.storyboard */,
 				B7C413C01FB52F7100A9763D /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
@@ -311,7 +308,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7C413C21FB52F7100A9763D /* LaunchScreen.storyboard in Resources */,
-				B708E5DB1FF1E68900272B43 /* HomeNavigation.storyboard in Resources */,
 				B7C413BF1FB52F7100A9763D /* Assets.xcassets in Resources */,
 				B7C413BA1FB52F7100A9763D /* Main.storyboard in Resources */,
 			);
@@ -345,7 +341,7 @@
 				B77074081FB60D7300D7FBAE /* ActiveTeam.swift in Sources */,
 				B77074061FB60CAD00D7FBAE /* Utility.swift in Sources */,
 				B7D054331FB54FC80085DEA5 /* Player.swift in Sources */,
-				B7D054351FB553810085DEA5 /* StatsViewController.swift in Sources */,
+				B708E5DD1FF1F68500272B43 /* MyTeamViewController.swift in Sources */,
 				B770740D1FB60F0400D7FBAE /* NavBarController.swift in Sources */,
 				B783DD0C1FB695D700F9EE33 /* GameViewController.swift in Sources */,
 				B7C413BD1FB52F7100A9763D /* soccer_stats.xcdatamodeld in Sources */,
