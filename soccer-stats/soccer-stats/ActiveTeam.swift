@@ -22,4 +22,12 @@ class ActiveTeam:NSObject{
     func changePlayers(players:[NSManagedObject]){
         activeTeam = players
     }
+    
+    func appendPlayer(player:NSManagedObject) {
+        activeTeam.append(player)
+    }
+    
+    func removePlayer(atIndex:Int) {
+        activeTeam.remove(at: atIndex)
+    }
 }

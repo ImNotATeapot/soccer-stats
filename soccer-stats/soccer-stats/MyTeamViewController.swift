@@ -13,7 +13,6 @@ import CoreData
 class MyTeamViewController: UIViewController {
 
     var _playerObjects:[NSManagedObject] = [NSManagedObject]()
-    var _displayedPlayers:[NSManagedObject] = ActiveTeam.sharedInstance.activeTeam
     
     @IBOutlet weak var _player1Button: PlayerButton!
     @IBOutlet weak var _player2Button: PlayerButton!
@@ -88,14 +87,14 @@ class MyTeamViewController: UIViewController {
         _player3Button.number = 2
         _player4Button.number = 3
         
-        if _displayedPlayers.count > 0 {
-            _player1Button.player = _displayedPlayers[0]
-            if _displayedPlayers.count > 1 {
-                _player2Button.player = _displayedPlayers[1]
-                if _displayedPlayers.count > 2 {
-                    _player3Button.player = _displayedPlayers[2]
-                    if _displayedPlayers.count > 3 {
-                        _player4Button.player = _displayedPlayers[3]
+        if ActiveTeam.sharedInstance.activeTeam.count > 0 {
+            _player1Button.player = ActiveTeam.sharedInstance.activeTeam[0]
+            if ActiveTeam.sharedInstance.activeTeam.count > 1 {
+                _player2Button.player = ActiveTeam.sharedInstance.activeTeam[1]
+                if ActiveTeam.sharedInstance.activeTeam.count > 2 {
+                    _player3Button.player = ActiveTeam.sharedInstance.activeTeam[2]
+                    if ActiveTeam.sharedInstance.activeTeam.count > 3 {
+                        _player4Button.player = ActiveTeam.sharedInstance.activeTeam[3]
                     }
                 }
             }
@@ -120,43 +119,28 @@ class MyTeamViewController: UIViewController {
     @objc func didSelectPlayerButton(_ playerButton: PlayerButton) {
         if playerButton.player != nil {
             playerButton.player = nil
-            _displayedPlayers.remove(at: playerButton.number!)
-            /*
-            0, 1, 2, 3
-            a, b, c, d
-             
-             selected index 1
-             
-             0, 1, 2, 3
-             a, c, c, d
-             
-             0, 1, 3, 4
-             a, c, d, d
-             
-             0, 1, 2, 3
-             a, c, d
- 
- */
-            for i in /*start index*/1...2/*end index*/ {
-                playerButtonArryay[i].player = playerButtonArray[i+1].player
-            }
-            for i in /*end index*/2..3 {
-                
-            
-            /*let numberToMoveDown:Int = _displayedPlayers.count - playerButton.number!
+            ActiveTeam.sharedInstance.activeTeam.remove(at: playerButton.number!)
+
+            let numberToMoveDown:Int = ActiveTeam.sharedInstance.activeTeam.count - playerButton.number!
             var indexOfPlayerButton:Int = 0
             for i in 0...3 {
                 if playerButtonArray[i] == playerButton {
                     indexOfPlayerButton = i
                 }
             }
-            for i in 0...numberToMoveDown {
-                playerButtonArray[i].player = playerButtonArray[i+1].player
-            }
-            playerButton.setNeedsDisplay()
-            if let number = playerButton.number {
-                _displayedPlayers[number] = NSManagedObject()
- */
+            if numberToMoveDown >= 1 {
+                let endIndex:Int = indexOfPlayerButton + numberToMoveDown - 1
+                for i in indexOfPlayerButton...endIndex {
+                    playerButtonArray[i].player = playerButtonArray[i+1].player
+                    playerButtonArray[i].setNeedsDisplay()
+                }
+                for i in endIndex+1...3 {
+                    playerButtonArray[i].player = nil
+                    playerButtonArray[i].setNeedsDisplay()
+                }
+            } else {
+                playerButtonArray[indexOfPlayerButton].player = nil;
+                playerButtonArray[indexOfPlayerButton].setNeedsDisplay()
             }
         }
     }
@@ -245,26 +229,26 @@ extension MyTeamViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if _displayedPlayers.count == 0 {
+        if ActiveTeam.sharedInstance.activeTeam.count == 0 {
             let playerCell:PlayerCell = tableView.cellForRow(at: indexPath) as! PlayerCell
             _player1Button.player = playerCell.player
             _player1Button.setNeedsDisplay()
-            _displayedPlayers.append(playerCell.player!)
-        } else if _displayedPlayers.count == 1 {
+            ActiveTeam.sharedInstance.activeTeam.append(playerCell.player!)
+        } else if ActiveTeam.sharedInstance.activeTeam.count == 1 {
             let playerCell:PlayerCell = tableView.cellForRow(at: indexPath) as! PlayerCell
             _player2Button.player = playerCell.player
             _player2Button.setNeedsDisplay()
-            _displayedPlayers.append(playerCell.player!)
-        } else if _displayedPlayers.count == 2 {
+            ActiveTeam.sharedInstance.activeTeam.append(playerCell.player!)
+        } else if ActiveTeam.sharedInstance.activeTeam.count == 2 {
             let playerCell:PlayerCell = tableView.cellForRow(at: indexPath) as! PlayerCell
             _player3Button.player = playerCell.player
             _player3Button.setNeedsDisplay()
-            _displayedPlayers.append(playerCell.player!)
-        } else if _displayedPlayers.count == 3 {
+            ActiveTeam.sharedInstance.activeTeam.append(playerCell.player!)
+        } else if ActiveTeam.sharedInstance.activeTeam.count == 3 {
             let playerCell:PlayerCell = tableView.cellForRow(at: indexPath) as! PlayerCell
             _player4Button.player = playerCell.player
             _player4Button.setNeedsDisplay()
-            _displayedPlayers.append(playerCell.player!)
+            ActiveTeam.sharedInstance.activeTeam.append(playerCell.player!)
         }
     }
     
