@@ -30,7 +30,6 @@ class ActionButton:UIButton {
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        checkState()
         if let actualDelegate = ActionButtonDelegate {
             actualDelegate.didSelectButton(self)
         }
@@ -51,13 +50,4 @@ class ActionButton:UIButton {
 //        
 //    }
     
-    
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        
-//        self.addTarget(self, action: #selector(self.buttonClicked), for: .touchUpInside)
-//    }
-//    
-//    func buttonClicked() {
-//    }
 }

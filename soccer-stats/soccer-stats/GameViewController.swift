@@ -12,21 +12,6 @@ import UIKit
 
 class GameViewController:UIViewController, ActionButtonDelegate {
     
-//    class button:UIButton {
-//        
-//        var buttonSelected:UIButton = UIButton()
-//        var action:String?
-//        var color:UIColor = UIColor.init(red: 117/255, green: 224/255, blue: 51/255, alpha: 1)
-//        
-//        
-//        override func draw(_ rect: CGRect) {
-//            self.layer.borderWidth = 2.0
-//            self.layer.borderColor = color.cgColor
-//            self.layer.cornerRadius = 12.0
-//            self.setTitleColor(UIColor.init(red: 83/255, green: 88/255, blue: 95/255, alpha: 1.0), for: .normal)
-//        }
-//    }
-    
     @IBOutlet weak var fieldImageView: UIImageView!
     @IBOutlet weak var failButton: ActionButton!
     @IBOutlet weak var successButton: ActionButton!
@@ -41,10 +26,12 @@ class GameViewController:UIViewController, ActionButtonDelegate {
     var positionIsSelected:Bool = false;
     var actionIsSelected:Bool = false;
     var playerIsSelected:Bool = false;
+    var outcomeIsSelected:Bool = false;
     
     var selectedPosition:CGPoint = CGPoint(x: 0.0, y: 0.0)
     var selectedPlayer:Player = Player()
     var selectedActionButton:ActionButton = ActionButton()
+    var selectedOutcome:ActionButton = ActionButton()
     var count:Int = 0
     
     var arrow:CAShapeLayer = CAShapeLayer()
@@ -74,6 +61,10 @@ class GameViewController:UIViewController, ActionButtonDelegate {
             actionButton.isSelected = true
             actionButton.checkState()
             selectedActionButton = actionButton
+        }
+        
+        if count == 4 {
+            save()
         }
     }
     
@@ -110,11 +101,15 @@ class GameViewController:UIViewController, ActionButtonDelegate {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         selectedPosition = tapGestureRecognizer.location(in: tappedImage)
         
-        Utility.init().drawCircle(selectedPosition: selectedPosition, tappedImage: tappedImage)
+        CoreGraphicsHelper.init().drawCircle(selectedPosition: selectedPosition, tappedImage: tappedImage)
         
-        if count == 3 {
-//            performSelector(inBackground: #selector(self.save), with: self)
+        if count == 4 {
+            save()
         }
+    }
+    
+    func save() {
+        //TODO: implement this
     }
     
     @objc func positionPanned(_ panGestureRecognizer: UIPanGestureRecognizer) {
@@ -135,7 +130,7 @@ class GameViewController:UIViewController, ActionButtonDelegate {
             }
 
             startPoint = location
-            arrowPath = Utility.init().drawArrow(start: startPoint, end: CGPoint(x: startPoint.x+1, y: startPoint.y+1))
+            arrowPath = CoreGraphicsHelper.init().drawArrow(start: startPoint, end: CGPoint(x: startPoint.x+1, y: startPoint.y+1))
             
             let arrowShape = CAShapeLayer()
             arrowShape.path = arrowPath.cgPath
@@ -146,23 +141,28 @@ class GameViewController:UIViewController, ActionButtonDelegate {
             fieldImageView.layer.addSublayer(arrow)
         case .changed :
             endPoint = location
-            arrowPath = Utility.init().drawArrow(start: startPoint, end: endPoint)
+            arrowPath = CoreGraphicsHelper.init().drawArrow(start: startPoint, end: endPoint)
             arrow.path = arrowPath.cgPath
         case .ended :
             endPoint = location
-            arrowPath = Utility.init().drawArrow(start: startPoint, end: endPoint)
+            arrowPath = CoreGraphicsHelper.init().drawArrow(start: startPoint, end: endPoint)
             arrow.path = arrowPath.cgPath
         default: break
         }
     }
     
     @IBAction func clearSelection(_ sender: Any) {
+        count = 0
         if positionIsSelected {
             for layer in fieldImageView.layer.sublayers! {
                 layer.removeFromSuperlayer()
             }
         }
         if actionIsSelected {
+            actionIsSelected = false
+            selectedActionButton.isSelected = false
+            selectedActionButton.checkState()
+            selectedActionButton = ActionButton()
             
         }
         if playerIsSelected {

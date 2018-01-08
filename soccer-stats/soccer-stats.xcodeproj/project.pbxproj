@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B708E5DD1FF1F68500272B43 /* MyTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708E5DC1FF1F68500272B43 /* MyTeamViewController.swift */; };
+		B765507A2002176300FB5D57 /* PlayerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76550792002176300FB5D57 /* PlayerButton.swift */; };
+		B765507C20021B5200FB5D57 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765507B20021B5200FB5D57 /* PlayerCell.swift */; };
 		B77074031FB60C2100D7FBAE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77074021FB60C2100D7FBAE /* TabBarController.swift */; };
-		B77074061FB60CAD00D7FBAE /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77074051FB60CAD00D7FBAE /* Utility.swift */; };
+		B77074061FB60CAD00D7FBAE /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77074051FB60CAD00D7FBAE /* CoreDataHelper.swift */; };
 		B77074081FB60D7300D7FBAE /* ActiveTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77074071FB60D7300D7FBAE /* ActiveTeam.swift */; };
 		B770740B1FB60EED00D7FBAE /* PlayerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B770740A1FB60EED00D7FBAE /* PlayerTableView.swift */; };
 		B770740D1FB60F0400D7FBAE /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B770740C1FB60F0400D7FBAE /* NavBarController.swift */; };
@@ -24,6 +26,7 @@
 		B7C413D81FB52F7100A9763D /* soccer_statsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C413D71FB52F7100A9763D /* soccer_statsUITests.swift */; };
 		B7D054331FB54FC80085DEA5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D054321FB54FC80085DEA5 /* Player.swift */; };
 		B7F1C0EF1FB76BAF009C0B7A /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F1C0EE1FB76BAF009C0B7A /* ActionButton.swift */; };
+		B7F403F02000E151005E31F1 /* CoreGraphicsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F403EF2000E151005E31F1 /* CoreGraphicsHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +48,10 @@
 
 /* Begin PBXFileReference section */
 		B708E5DC1FF1F68500272B43 /* MyTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamViewController.swift; sourceTree = "<group>"; };
+		B76550792002176300FB5D57 /* PlayerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerButton.swift; sourceTree = "<group>"; };
+		B765507B20021B5200FB5D57 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		B77074021FB60C2100D7FBAE /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		B77074051FB60CAD00D7FBAE /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		B77074051FB60CAD00D7FBAE /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		B77074071FB60D7300D7FBAE /* ActiveTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveTeam.swift; sourceTree = "<group>"; };
 		B770740A1FB60EED00D7FBAE /* PlayerTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableView.swift; sourceTree = "<group>"; };
 		B770740C1FB60F0400D7FBAE /* NavBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
@@ -67,6 +72,7 @@
 		B7C413D91FB52F7100A9763D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7D054321FB54FC80085DEA5 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		B7F1C0EE1FB76BAF009C0B7A /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		B7F403EF2000E151005E31F1 /* CoreGraphicsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphicsHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,16 +100,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B77074041FB60C6600D7FBAE /* Resources */ = {
+		B77074041FB60C6600D7FBAE /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				B77074051FB60CAD00D7FBAE /* Utility.swift */,
+				B77074051FB60CAD00D7FBAE /* CoreDataHelper.swift */,
+				B7F403EF2000E151005E31F1 /* CoreGraphicsHelper.swift */,
 				B7C413B41FB52F7100A9763D /* AppDelegate.swift */,
 				B7C413BE1FB52F7100A9763D /* Assets.xcassets */,
 				B7C413C31FB52F7100A9763D /* Info.plist */,
 				B7C413BB1FB52F7100A9763D /* soccer_stats.xcdatamodeld */,
 			);
-			name = Resources;
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		B77074091FB60EE000D7FBAE /* Views */ = {
@@ -141,7 +148,7 @@
 				B77074091FB60EE000D7FBAE /* Views */,
 				B7D0542C1FB54EE10085DEA5 /* Controllers */,
 				B7D0542E1FB54EF60085DEA5 /* Storyboards */,
-				B77074041FB60C6600D7FBAE /* Resources */,
+				B77074041FB60C6600D7FBAE /* Utility */,
 			);
 			path = "soccer-stats";
 			sourceTree = "<group>";
@@ -191,6 +198,8 @@
 				B7D054321FB54FC80085DEA5 /* Player.swift */,
 				B77074071FB60D7300D7FBAE /* ActiveTeam.swift */,
 				B7F1C0EE1FB76BAF009C0B7A /* ActionButton.swift */,
+				B76550792002176300FB5D57 /* PlayerButton.swift */,
+				B765507B20021B5200FB5D57 /* PlayerCell.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -334,13 +343,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7F403F02000E151005E31F1 /* CoreGraphicsHelper.swift in Sources */,
 				B770740B1FB60EED00D7FBAE /* PlayerTableView.swift in Sources */,
 				B7C413B51FB52F7100A9763D /* AppDelegate.swift in Sources */,
 				B77074031FB60C2100D7FBAE /* TabBarController.swift in Sources */,
 				B770740F1FB6345100D7FBAE /* SettingsViewController.swift in Sources */,
 				B77074081FB60D7300D7FBAE /* ActiveTeam.swift in Sources */,
-				B77074061FB60CAD00D7FBAE /* Utility.swift in Sources */,
+				B77074061FB60CAD00D7FBAE /* CoreDataHelper.swift in Sources */,
 				B7D054331FB54FC80085DEA5 /* Player.swift in Sources */,
+				B765507A2002176300FB5D57 /* PlayerButton.swift in Sources */,
+				B765507C20021B5200FB5D57 /* PlayerCell.swift in Sources */,
 				B708E5DD1FF1F68500272B43 /* MyTeamViewController.swift in Sources */,
 				B770740D1FB60F0400D7FBAE /* NavBarController.swift in Sources */,
 				B783DD0C1FB695D700F9EE33 /* GameViewController.swift in Sources */,

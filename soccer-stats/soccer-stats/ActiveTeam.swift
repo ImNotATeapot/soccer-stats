@@ -13,7 +13,7 @@ import CoreData
 class ActiveTeam:NSObject{
     static let sharedInstance = ActiveTeam()
     
-    var activeTeam:[NSManagedObject] = []
+    var activeTeam:[NSManagedObject] = [NSManagedObject(), NSManagedObject(), NSManagedObject(), NSManagedObject()]
     
     func getPlayers()->[NSManagedObject]{
         return activeTeam
