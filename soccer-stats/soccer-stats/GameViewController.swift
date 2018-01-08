@@ -46,8 +46,6 @@ class GameViewController:UIViewController {
         fieldImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didTapPosition)))
         fieldImageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.didPanPosition)))
         
-        successButton.color = UIColor(red: 81/255, green: 167/255, blue: 249/255, alpha: 1.0)
-        failButton.color = UIColor(red: 236/255, green: 93/255, blue: 87/255, alpha: 1.0)
         successButton.addTarget(self, action: #selector(didSelectOutcome(_:)), for: .touchUpInside)
         failButton.addTarget(self, action: #selector(didSelectOutcome(_:)), for: .touchUpInside)
         
@@ -89,19 +87,15 @@ class GameViewController:UIViewController {
             if actionButton.isSelected {
                 count -= 1
                 actionButton.isSelected = false
-                actionButton.checkState()
                 selectedActionButton = nil
             } else {
                 actionButton.isSelected = true
-                actionButton.checkState()
                 selectedActionButton!.isSelected = false
-                selectedActionButton!.checkState()
                 selectedActionButton = actionButton
             }
         } else {
             count += 1
             actionButton.isSelected = true
-            actionButton.checkState()
             selectedActionButton = actionButton
         }
         
@@ -115,18 +109,15 @@ class GameViewController:UIViewController {
             if outcomeButton.isSelected {
                 count -= 1
                 outcomeButton.isSelected = false
-                outcomeButton.checkState()
                 selectedActionButton = nil
             } else {
-                outcomeButton.checkState()
+                outcomeButton.isSelected = true
                 selectedOutcomeButton!.isSelected = false
-                selectedOutcomeButton!.checkState()
                 selectedOutcomeButton = outcomeButton
             }
         } else {
             count += 1
             outcomeButton.isSelected = true
-            outcomeButton.checkState()
             selectedOutcomeButton = outcomeButton
         }
         
@@ -221,11 +212,12 @@ class GameViewController:UIViewController {
     
     func save() {
         //TODO: implement this
+        
     }
     
     @IBAction func clearSelection(_ sender: Any) {
         count = 0
-        if !positionIsSelected {
+        if positionIsSelected {
             for layer in fieldImageView.layer.sublayers! {
                 layer.removeFromSuperlayer()
             }
@@ -234,7 +226,6 @@ class GameViewController:UIViewController {
         }
         if selectedActionButton != nil {
             selectedActionButton!.isSelected = false
-            selectedActionButton!.checkState()
             selectedActionButton = nil
         }
         if selectedOutcomeButton != nil {

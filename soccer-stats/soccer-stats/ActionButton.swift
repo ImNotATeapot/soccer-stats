@@ -12,22 +12,26 @@ import UIKit
 class ActionButton:UIButton {
     
     var action:String?
-    var color:UIColor = UIColor.init(red: 117/255, green: 224/255, blue: 51/255, alpha: 1)
-    
     
     override func draw(_ rect: CGRect) {
-        self.layer.borderWidth = 2.0
-        self.layer.borderColor = color.cgColor
         self.layer.cornerRadius = 12.0
-        self.setTitleColor(UIColor.init(red: 83/255, green: 88/255, blue: 95/255, alpha: 1.0), for: .normal)
-    }
-
-    public func checkState() {
+        self.setTitleColor(UIColor.white, for: .normal)
+        if self.tag == 0 {
+            if self.isSelected {
+                self.layer.backgroundColor = UIColor.init(red: 27/255, green: 165/255, blue: 92/255, alpha: 1.0).cgColor
+            } else {
+                self.layer.backgroundColor = UIColor.init(red: 18/255, green: 106/255, blue: 59/255, alpha: 1.0).cgColor
+            }
+        } else if self.tag == 1 {
+            self.layer.backgroundColor = UIColor.init(red: 0/255, green: 201/255, blue: 203/255, alpha: 1.0).cgColor
+        } else if self.tag == 2 {
+            self.layer.backgroundColor = UIColor.init(red: 184/255, green: 19/255, blue: 0/255, alpha: 1.0).cgColor
+        }
         if self.isSelected {
-            self.layer.backgroundColor = color.cgColor
+            self.alpha = 1.0
         } else {
-            self.layer.backgroundColor = UIColor.clear.cgColor
+            self.alpha = 0.56
         }
     }
-    
+
 }

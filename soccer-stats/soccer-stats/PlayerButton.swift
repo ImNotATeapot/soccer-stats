@@ -41,6 +41,7 @@ class PlayerButton: UIButton {
                 self.setTitle(playerNumber + "\n" + lastName, for: .normal)
                 if self.isSelected {
                     self.alpha = 0.81
+                    //dont forget to change the font
                 } else {
                     self.alpha = 0.43
                 }

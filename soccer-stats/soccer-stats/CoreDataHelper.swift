@@ -48,10 +48,6 @@ class CoreDataHelper{
     }
     
     func delete(ID:NSManagedObjectID){
-        //        let entityDescription = NSEntityDescription.entityForName("Person", inManagedObjectContext: managedContext);
-        //        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName:"PlayerModel")
-        //        fetchRequest.predicate = NSPredicate(format: "objectID = %i", ID)
-        //        let objects = try! managedContext.fetch(fetchRequest)
         let object = managedContext.object(with: ID)
         managedContext.delete(object)
         
