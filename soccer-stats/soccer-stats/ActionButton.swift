@@ -11,7 +11,6 @@ import UIKit
 
 class ActionButton:UIButton {
     
-    var buttonSelected:UIButton = UIButton()
     var action:String?
     var color:UIColor = UIColor.init(red: 117/255, green: 224/255, blue: 51/255, alpha: 1)
     
@@ -30,12 +29,5 @@ class ActionButton:UIButton {
             self.layer.backgroundColor = UIColor.clear.cgColor
         }
     }
-    
-//    override func didch
-//    override func setSelected
-    
-//    @IBAction func doSomething(sender: self, forEvent event: .TouchUpInside) {
-//        
-//    }
     
 }

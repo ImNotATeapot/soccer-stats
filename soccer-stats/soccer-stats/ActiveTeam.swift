@@ -14,20 +14,4 @@ class ActiveTeam:NSObject{
     static let sharedInstance = ActiveTeam()
     
     var activeTeam:[NSManagedObject] = []
-    
-    func getPlayers()->[NSManagedObject]{
-        return activeTeam
-    }
-    
-    func changePlayers(players:[NSManagedObject]){
-        activeTeam = players
-    }
-    
-    func appendPlayer(player:NSManagedObject) {
-        activeTeam.append(player)
-    }
-    
-    func removePlayer(atIndex:Int) {
-        activeTeam.remove(at: atIndex)
-    }
 }
