@@ -25,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "soccer-stats/ActionButton.swift"
-            timestampString = "537097646.501636"
+            filePath = "soccer-stats/GameViewController.swift"
+            timestampString = "537102422.697029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "touchesBegan(_:with:)"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "didSelectButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "soccer-stats/ActionButton.swift"
-            timestampString = "537097646.501726"
+            timestampString = "537102422.697166"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "checkState()"
             landmarkType = "7">
          </BreakpointContent>
@@ -57,45 +57,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "soccer-stats/GameViewController.swift"
-            timestampString = "536932356.3773431"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "GameViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "soccer-stats/MyTeamViewController.swift"
-            timestampString = "537097646.50182"
+            timestampString = "537102422.69728"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "soccer-stats/PlayerButton.swift"
-            timestampString = "537097646.502299"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "touchesEnded(_:with:)"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "didSelectPlayerButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

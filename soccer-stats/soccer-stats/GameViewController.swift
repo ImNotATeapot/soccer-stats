@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
-class GameViewController:UIViewController, ActionButtonDelegate {
+class GameViewController:UIViewController {
     
     @IBOutlet weak var fieldImageView: UIImageView!
     @IBOutlet weak var failButton: ActionButton!
@@ -21,7 +21,13 @@ class GameViewController:UIViewController, ActionButtonDelegate {
     @IBOutlet weak var tackleButton: ActionButton!
     @IBOutlet weak var shotButton: ActionButton!
     @IBOutlet weak var passButton: ActionButton!
-    var buttonArray:[ActionButton] = [ActionButton]()
+    @IBOutlet weak var player1Button: PlayerButton!
+    @IBOutlet weak var player2Button: PlayerButton!
+    @IBOutlet weak var player3Button: PlayerButton!
+    @IBOutlet weak var player4Button: PlayerButton!
+    
+    
+    var actionButtonArray:[ActionButton] = [ActionButton]()
     
     var positionIsSelected:Bool = false;
     var actionIsSelected:Bool = false;
@@ -31,7 +37,7 @@ class GameViewController:UIViewController, ActionButtonDelegate {
     var selectedPosition:CGPoint = CGPoint(x: 0.0, y: 0.0)
     var selectedPlayer:Player = Player()
     var selectedActionButton:ActionButton = ActionButton()
-    var selectedOutcome:ActionButton = ActionButton()
+    var selectedOutcomeButton:ActionButton = ActionButton()
     var count:Int = 0
     
     var arrow:CAShapeLayer = CAShapeLayer()
@@ -39,6 +45,28 @@ class GameViewController:UIViewController, ActionButtonDelegate {
     var endPoint:CGPoint = CGPoint()
     
     var displayedPlayers:[NSManagedObject] = ActiveTeam.sharedInstance.activeTeam
+    
+    override func viewDidLoad() {
+        fieldImageView.isUserInteractionEnabled = true
+        fieldImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didTapPosition)))
+        fieldImageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.didPanPosition)))
+        
+        successButton.color = UIColor(red: 81/255, green: 167/255, blue: 249/255, alpha: 1.0)
+        failButton.color = UIColor(red: 236/255, green: 93/255, blue: 87/255, alpha: 1.0)
+        successButton.addTarget(self, action: #selector(didSelectOutcome(_:)), for: .touchUpInside)
+        failButton.addTarget(self, action: #selector(didSelectOutcome(_:)), for: .touchUpInside)
+        
+        actionButtonArray.append(assistButton)
+        actionButtonArray.append(interceptionButton)
+        actionButtonArray.append(headerButton)
+        actionButtonArray.append(tackleButton)
+        actionButtonArray.append(shotButton)
+        actionButtonArray.append(passButton)
+        
+        for button in actionButtonArray {
+            button.addTarget(self, action: #selector(didSelectButton(_:)), for: .touchUpInside)
+        }
+    }
     
     func didSelectButton(_ actionButton: ActionButton) {
         if actionIsSelected {
@@ -68,28 +96,39 @@ class GameViewController:UIViewController, ActionButtonDelegate {
         }
     }
     
-    
-    override func viewDidLoad() {
-        fieldImageView.isUserInteractionEnabled = true
-        fieldImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.positionTapped)))
-        fieldImageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.positionPanned)))
+    func didSelectOutcome(_ outcomeButton: ActionButton) {
+        if outcomeIsSelected {
+            if outcomeButton.isSelected {
+                count -= 1
+                outcomeIsSelected = false
+                outcomeButton.isSelected = false
+                outcomeButton.checkState()
+                selectedActionButton = ActionButton()
+            } else {
+                outcomeButton.isSelected = true
+                outcomeButton.checkState()
+                selectedOutcomeButton.isSelected = false
+                selectedOutcomeButton.checkState()
+                selectedOutcomeButton = outcomeButton
+            }
+        } else {
+            count += 1
+            outcomeIsSelected = true
+            outcomeButton.isSelected = true
+            outcomeButton.checkState()
+            selectedOutcomeButton = outcomeButton
+        }
         
-        successButton.color = UIColor(red: 81/255, green: 167/255, blue: 249/255, alpha: 1.0)
-        failButton.color = UIColor(red: 236/255, green: 93/255, blue: 87/255, alpha: 1.0)
-        
-        buttonArray.append(assistButton)
-        buttonArray.append(interceptionButton)
-        buttonArray.append(headerButton)
-        buttonArray.append(tackleButton)
-        buttonArray.append(shotButton)
-        buttonArray.append(passButton)
-        
-        for button in buttonArray {
-            button.ActionButtonDelegate = self
+        if count == 4 {
+            save()
         }
     }
     
-    @objc func positionTapped(_ tapGestureRecognizer: UITapGestureRecognizer){
+    func didSelectPlayer() {
+        
+    }
+    
+    @objc func didTapPosition(_ tapGestureRecognizer: UITapGestureRecognizer){
         if positionIsSelected == false {
             positionIsSelected = true
             count += 1
@@ -108,11 +147,7 @@ class GameViewController:UIViewController, ActionButtonDelegate {
         }
     }
     
-    func save() {
-        //TODO: implement this
-    }
-    
-    @objc func positionPanned(_ panGestureRecognizer: UIPanGestureRecognizer) {
+    @objc func didPanPosition(_ panGestureRecognizer: UIPanGestureRecognizer) {
         
         let location = panGestureRecognizer.location(in: fieldImageView)
         var arrowPath:UIBezierPath = UIBezierPath()
@@ -149,6 +184,14 @@ class GameViewController:UIViewController, ActionButtonDelegate {
             arrow.path = arrowPath.cgPath
         default: break
         }
+        
+        if count == 4 {
+            save()
+        }
+    }
+    
+    func save() {
+        //TODO: implement this
     }
     
     @IBAction func clearSelection(_ sender: Any) {

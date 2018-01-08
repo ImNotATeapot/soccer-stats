@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 import CoreData
 
-//TDO implement search bar
+//TODO implement search bar
 class MyTeamViewController: UIViewController {
 
     var _playerObjects:[NSManagedObject] = [NSManagedObject]()
@@ -29,6 +29,7 @@ class MyTeamViewController: UIViewController {
     @IBOutlet weak var _playersTableView: UITableView!
     
     let _positions:[String] = ["Forward", "Midfielder", "GoalKeeper"]
+    var playerButtonArray:[PlayerButton] = []
     
     @IBAction func addPlayer(_ sender: Any) {
         hideNewPlayer(hide:false)
@@ -87,10 +88,76 @@ class MyTeamViewController: UIViewController {
         _player3Button.number = 2
         _player4Button.number = 3
         
+        if _displayedPlayers.count > 0 {
+            _player1Button.player = _displayedPlayers[0]
+            if _displayedPlayers.count > 1 {
+                _player2Button.player = _displayedPlayers[1]
+                if _displayedPlayers.count > 2 {
+                    _player3Button.player = _displayedPlayers[2]
+                    if _displayedPlayers.count > 3 {
+                        _player4Button.player = _displayedPlayers[3]
+                    }
+                }
+            }
+        }
+
+        
         if _playerObjects.count == 0 {
             let alert = UIAlertController(title: "No players", message: "You can add a player by selecting the + sign above", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+        }
+        
+        playerButtonArray.append(_player1Button)
+        playerButtonArray.append(_player2Button)
+        playerButtonArray.append(_player3Button)
+        playerButtonArray.append(_player4Button)
+        for playerButton in playerButtonArray {
+            playerButton.addTarget(self, action: #selector(didSelectPlayerButton(_:)), for: .touchUpInside)
+        }
+    }
+    
+    @objc func didSelectPlayerButton(_ playerButton: PlayerButton) {
+        if playerButton.player != nil {
+            playerButton.player = nil
+            _displayedPlayers.remove(at: playerButton.number!)
+            /*
+            0, 1, 2, 3
+            a, b, c, d
+             
+             selected index 1
+             
+             0, 1, 2, 3
+             a, c, c, d
+             
+             0, 1, 3, 4
+             a, c, d, d
+             
+             0, 1, 2, 3
+             a, c, d
+ 
+ */
+            for i in /*start index*/1...2/*end index*/ {
+                playerButtonArryay[i].player = playerButtonArray[i+1].player
+            }
+            for i in /*end index*/2..3 {
+                
+            
+            /*let numberToMoveDown:Int = _displayedPlayers.count - playerButton.number!
+            var indexOfPlayerButton:Int = 0
+            for i in 0...3 {
+                if playerButtonArray[i] == playerButton {
+                    indexOfPlayerButton = i
+                }
+            }
+            for i in 0...numberToMoveDown {
+                playerButtonArray[i].player = playerButtonArray[i+1].player
+            }
+            playerButton.setNeedsDisplay()
+            if let number = playerButton.number {
+                _displayedPlayers[number] = NSManagedObject()
+ */
+            }
         }
     }
     
@@ -155,19 +222,19 @@ extension MyTeamViewController: UITableViewDelegate, UITableViewDataSource {
             let player:NSManagedObject = playerCell.player!
             if let playerButton = _player1Button.player {
                 if playerButton == player {
-                    _player1Button.touchesEnded(Set<UITouch>(), with: UIEvent())
+                    didSelectPlayerButton(_player1Button)
                 }
             } else if let playerButton = _player2Button.player {
                 if playerButton == player {
-                    _player2Button.touchesEnded(Set<UITouch>(), with: UIEvent())
+                    didSelectPlayerButton(_player2Button)
                 }
             } else if let playerButton = _player3Button.player {
                 if playerButton == player {
-                    _player3Button.touchesEnded(Set<UITouch>(), with: UIEvent())
+                    didSelectPlayerButton(_player3Button)
                 }
             } else if let playerButton = _player4Button.player {
                 if playerButton == player {
-                    _player4Button.touchesEnded(Set<UITouch>(), with: UIEvent())
+                    didSelectPlayerButton(_player4Button)
                 }
             }
             let objectID:NSManagedObjectID = player.objectID
@@ -178,26 +245,26 @@ extension MyTeamViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if _player1Button.player == nil {
+        if _displayedPlayers.count == 0 {
             let playerCell:PlayerCell = tableView.cellForRow(at: indexPath) as! PlayerCell
             _player1Button.player = playerCell.player
             _player1Button.setNeedsDisplay()
-            _displayedPlayers[0] = playerCell.player!
-        } else if _player2Button.player == nil {
+            _displayedPlayers.append(playerCell.player!)
+        } else if _displayedPlayers.count == 1 {
             let playerCell:PlayerCell = tableView.cellForRow(at: indexPath) as! PlayerCell
             _player2Button.player = playerCell.player
             _player2Button.setNeedsDisplay()
-            _displayedPlayers[1] = playerCell.player!
-        } else if _player3Button.player == nil {
+            _displayedPlayers.append(playerCell.player!)
+        } else if _displayedPlayers.count == 2 {
             let playerCell:PlayerCell = tableView.cellForRow(at: indexPath) as! PlayerCell
             _player3Button.player = playerCell.player
             _player3Button.setNeedsDisplay()
-            _displayedPlayers[2] = playerCell.player!
-        } else if _player4Button.player == nil {
+            _displayedPlayers.append(playerCell.player!)
+        } else if _displayedPlayers.count == 3 {
             let playerCell:PlayerCell = tableView.cellForRow(at: indexPath) as! PlayerCell
             _player4Button.player = playerCell.player
             _player4Button.setNeedsDisplay()
-            _displayedPlayers[3] = playerCell.player!
+            _displayedPlayers.append(playerCell.player!)
         }
     }
     

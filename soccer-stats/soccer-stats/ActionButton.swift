@@ -9,13 +9,8 @@
 import Foundation
 import UIKit
 
-protocol ActionButtonDelegate {
-    func didSelectButton(_ actionButton:ActionButton)
-}
-
 class ActionButton:UIButton {
     
-    var ActionButtonDelegate:ActionButtonDelegate?
     var buttonSelected:UIButton = UIButton()
     var action:String?
     var color:UIColor = UIColor.init(red: 117/255, green: 224/255, blue: 51/255, alpha: 1)
@@ -27,16 +22,9 @@ class ActionButton:UIButton {
         self.layer.cornerRadius = 12.0
         self.setTitleColor(UIColor.init(red: 83/255, green: 88/255, blue: 95/255, alpha: 1.0), for: .normal)
     }
-    
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let actualDelegate = ActionButtonDelegate {
-            actualDelegate.didSelectButton(self)
-        }
-    }
-    
+
     public func checkState() {
-        if self.state == .selected {
+        if self.isSelected {
             self.layer.backgroundColor = color.cgColor
         } else {
             self.layer.backgroundColor = UIColor.clear.cgColor

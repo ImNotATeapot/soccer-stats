@@ -17,6 +17,7 @@ class PlayerButton: UIButton {
     
     override func draw(_ rect: CGRect) {
         if let player = player {
+            //does not work when firstName == nil
             let firstName:String = player.value(forKey: "firstName") as? String ?? ""
             let lastName:String = player.value(forKey: "lastName") as? String ?? ""
             self.setTitleColor(UIColor.white, for: .normal)
@@ -31,14 +32,14 @@ class PlayerButton: UIButton {
         }
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if player != nil {
-            player = nil
-            self.setNeedsDisplay()
-            if let number = number {
-                _displayedPlayers[number] = NSManagedObject()
-            }
-        }
-    }
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        if player != nil {
+//            player = nil
+//            self.setNeedsDisplay()
+//            if let number = number {
+//                _displayedPlayers[number] = NSManagedObject()
+//            }
+//        }
+//    }
 
 }
