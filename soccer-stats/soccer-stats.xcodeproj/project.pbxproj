@@ -10,6 +10,7 @@
 		B708E5DD1FF1F68500272B43 /* MyTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708E5DC1FF1F68500272B43 /* MyTeamViewController.swift */; };
 		B765507A2002176300FB5D57 /* PlayerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76550792002176300FB5D57 /* PlayerButton.swift */; };
 		B765507C20021B5200FB5D57 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765507B20021B5200FB5D57 /* PlayerCell.swift */; };
+		B7687E002005C07C00F7A969 /* PlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7687DFF2005C07C00F7A969 /* PlayersTableViewController.swift */; };
 		B77074031FB60C2100D7FBAE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77074021FB60C2100D7FBAE /* TabBarController.swift */; };
 		B77074061FB60CAD00D7FBAE /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77074051FB60CAD00D7FBAE /* CoreDataHelper.swift */; };
 		B77074081FB60D7300D7FBAE /* ActiveTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77074071FB60D7300D7FBAE /* ActiveTeam.swift */; };
@@ -50,6 +51,7 @@
 		B708E5DC1FF1F68500272B43 /* MyTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamViewController.swift; sourceTree = "<group>"; };
 		B76550792002176300FB5D57 /* PlayerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerButton.swift; sourceTree = "<group>"; };
 		B765507B20021B5200FB5D57 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		B7687DFF2005C07C00F7A969 /* PlayersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableViewController.swift; sourceTree = "<group>"; };
 		B77074021FB60C2100D7FBAE /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B77074051FB60CAD00D7FBAE /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		B77074071FB60D7300D7FBAE /* ActiveTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveTeam.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				B783DD0B1FB695D700F9EE33 /* GameViewController.swift */,
 				B708E5DC1FF1F68500272B43 /* MyTeamViewController.swift */,
+				B7687DFF2005C07C00F7A969 /* PlayersTableViewController.swift */,
 				B77074021FB60C2100D7FBAE /* TabBarController.swift */,
 				B770740C1FB60F0400D7FBAE /* NavBarController.swift */,
 				B770740E1FB6345100D7FBAE /* SettingsViewController.swift */,
@@ -347,6 +350,7 @@
 				B770740B1FB60EED00D7FBAE /* PlayerTableView.swift in Sources */,
 				B7C413B51FB52F7100A9763D /* AppDelegate.swift in Sources */,
 				B77074031FB60C2100D7FBAE /* TabBarController.swift in Sources */,
+				B7687E002005C07C00F7A969 /* PlayersTableViewController.swift in Sources */,
 				B770740F1FB6345100D7FBAE /* SettingsViewController.swift in Sources */,
 				B77074081FB60D7300D7FBAE /* ActiveTeam.swift in Sources */,
 				B77074061FB60CAD00D7FBAE /* CoreDataHelper.swift in Sources */,

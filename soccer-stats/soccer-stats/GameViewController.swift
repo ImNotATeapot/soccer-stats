@@ -211,8 +211,7 @@ class GameViewController:UIViewController {
     }
     
     func save() {
-        //TODO: implement this
-        
+        CoreDataHelper.init().addStat(ID: (selectedPlayerButton?.player?.objectID)!, startPoint: startPoint, endPoint: endPoint, statName: (selectedActionButton?.action)!, isCircle: isCircle)
     }
     
     @IBAction func clearSelection(_ sender: Any) {
