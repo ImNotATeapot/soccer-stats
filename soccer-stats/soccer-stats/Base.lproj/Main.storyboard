@@ -198,7 +198,7 @@
                                                                             <constraint firstAttribute="height" constant="21" id="8t8-dr-u50"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.56000000000000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="textColor" red="0.50194010162538272" green="0.68989927030456855" blue="0.51291900538198254" alpha="0.8005672089041096" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2OE-gK-a5a" userLabel="distributionButton" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
@@ -331,7 +331,7 @@
                                                                             <constraint firstAttribute="height" constant="21" id="Lpe-8V-gCX"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.56000000000000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="textColor" red="0.50194010160000002" green="0.68989927029999998" blue="0.51291900540000002" alpha="0.80056720889999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHi-lO-ig3" userLabel="throughButton" customClass="ActionButton" customModule="soccer_stats" customModuleProvider="target">
@@ -590,24 +590,31 @@
                     </view>
                     <navigationItem key="navigationItem" id="6ms-IU-Buy"/>
                     <connections>
+                        <outlet property="communicationButton" destination="suH-rt-jMv" id="1VN-KU-rG6"/>
+                        <outlet property="distributionButton" destination="2OE-gK-a5a" id="NVN-Uz-IAg"/>
+                        <outlet property="dribblingButton" destination="mf4-9Z-aVu" id="H5k-eA-B68"/>
                         <outlet property="failButton" destination="1Of-sO-Oh4" id="r43-nx-NUs"/>
                         <outlet property="fieldImageView" destination="FOM-cO-rsj" id="pbf-0e-8C1"/>
+                        <outlet property="longButton" destination="yrU-bo-vfQ" id="MqB-MP-3RT"/>
                         <outlet property="player1Button" destination="ls1-DN-M4V" id="PoB-3C-wnu"/>
                         <outlet property="player2Button" destination="aiO-8U-2r2" id="COZ-hw-hTj"/>
                         <outlet property="player3Button" destination="sNq-Ef-qsp" id="GNw-Ff-6q6"/>
                         <outlet property="player4Button" destination="ldW-Ae-eNd" id="mLt-Rc-tnH"/>
+                        <outlet property="shortButton" destination="ARo-2x-2Xj" id="NCY-x6-a7d"/>
                         <outlet property="shotButton" destination="1u5-ha-Ctv" id="Gnw-1Y-xFQ"/>
                         <outlet property="successButton" destination="50p-kx-FPR" id="ZUR-aS-i64"/>
+                        <outlet property="tacklingButton" destination="1u5-ha-Ctv" id="8yC-iQ-cfo"/>
+                        <outlet property="throughButton" destination="eHi-lO-ig3" id="IDZ-7o-oHE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2845.8984375" y="-63.28125"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Actions Table View Controller-->
         <scene sceneID="Ygn-aQ-8dq">
             <objects>
-                <tableViewController id="Ghh-mo-gJK" sceneMemberID="viewController">
+                <tableViewController id="Ghh-mo-gJK" customClass="ActionsTableViewController" customModule="soccer_stats" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="dph-0K-caI">
                         <rect key="frame" x="0.0" y="0.0" width="409.5" height="550"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -828,10 +835,10 @@
             </objects>
             <point key="canvasLocation" x="2354" y="-764"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="hc3-Pt-sGl">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bHV-Ip-WFI" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bHV-Ip-WFI" customClass="MainViewController" customModule="soccer_stats" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7dI-aM-12d"/>
                         <viewControllerLayoutGuide type="bottom" id="eUl-Y1-82Y"/>
@@ -864,7 +871,7 @@
                                     <constraint firstAttribute="height" constant="585" id="LbI-Hb-hX8"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="Ghh-mo-gJK" kind="embed" id="tXi-Va-bCc"/>
+                                    <segue destination="Ghh-mo-gJK" kind="embed" id="twt-dh-EnK"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -886,8 +893,6 @@
                     <navigationItem key="navigationItem" id="ilb-HU-I0h"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toGameViewController" id="NON-Wu-Prf"/>
-                        <segue destination="Bi3-tH-Cfx" kind="show" identifier="toStatsViewController" id="1LK-RR-OgI"/>
-                        <segue destination="Amy-uo-uyn" kind="show" identifier="toMyTeamViewController" id="yvh-xJ-qft"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNC-we-fCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1364,13 +1369,20 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2296" y="651"/>
+            <point key="canvasLocation" x="2205" y="638"/>
         </scene>
         <!--Nav Bar Controller-->
         <scene sceneID="egh-GG-KSx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0xj-ZO-kj1" customClass="NavBarController" customModule="soccer_stats" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="iRg-yG-Wzf"/>
+                    <tabBarItem key="tabBarItem" image="newGame" id="iRg-yG-Wzf">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" id="IsP-Ok-oPA">
                         <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
@@ -1388,11 +1400,18 @@
             </objects>
             <point key="canvasLocation" x="1528" y="-63"/>
         </scene>
-        <!--Stats-->
+        <!--Nav Bar Controller-->
         <scene sceneID="Sby-Z2-gVU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bi3-tH-Cfx" customClass="NavBarController" customModule="soccer_stats" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stats" id="iHh-fZ-jKq"/>
+                    <tabBarItem key="tabBarItem" title="" image="myTeam" selectedImage="myTeam" id="iHh-fZ-jKq">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AKe-yd-ZC8">
                         <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
@@ -1658,11 +1677,18 @@
             </objects>
             <point key="canvasLocation" x="751" y="1356"/>
         </scene>
-        <!--My Team-->
+        <!--Nav Bar Controller-->
         <scene sceneID="wRf-Pp-t42">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Amy-uo-uyn" customClass="NavBarController" customModule="soccer_stats" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Team" id="PpL-2I-rUq"/>
+                    <tabBarItem key="tabBarItem" title="" image="matchRecords" selectedImage="matchRecords" id="PpL-2I-rUq">
+                        <color key="badgeColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rzg-PN-9DS">
                         <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
@@ -1726,11 +1752,17 @@
             </objects>
             <point key="canvasLocation" x="2180" y="1898"/>
         </scene>
-        <!--Settings-->
+        <!--Nav Bar Controller-->
         <scene sceneID="lo8-vc-kF8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cY1-lL-BMo" customClass="NavBarController" customModule="soccer_stats" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="HnC-9o-OZ7"/>
+                    <tabBarItem key="tabBarItem" title="" image="settings" selectedImage="myTeam" id="HnC-9o-OZ7">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iL2-jb-b1v">
                         <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
@@ -1889,13 +1921,10 @@
         <image name="field" width="520" height="330"/>
         <image name="field (white)" width="600" height="382"/>
         <image name="field3D" width="1402" height="868"/>
-        <image name="matchRecords" width="138" height="140"/>
-        <image name="myTeam" width="138" height="140"/>
-        <image name="settings" width="138" height="140"/>
+        <image name="matchRecords" width="54" height="53"/>
+        <image name="myTeam" width="46" height="46"/>
+        <image name="newGame" width="74" height="74"/>
+        <image name="settings" width="46" height="46"/>
         <image name="startNewGame" width="812" height="306"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="yvh-xJ-qft"/>
-        <segue reference="1LK-RR-OgI"/>
-    </inferredMetricsTieBreakers>
 </document>

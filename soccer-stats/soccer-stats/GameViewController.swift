@@ -15,20 +15,22 @@ class GameViewController:UIViewController {
     @IBOutlet weak var fieldImageView: UIImageView!
     @IBOutlet weak var failButton: ActionButton!
     @IBOutlet weak var successButton: ActionButton!
-    @IBOutlet weak var assistButton: ActionButton!
-    @IBOutlet weak var interceptionButton: ActionButton!
-    @IBOutlet weak var headerButton: ActionButton!
-    @IBOutlet weak var tackleButton: ActionButton!
+    
+
+    @IBOutlet weak var tacklingButton: ActionButton!
+    @IBOutlet weak var dribblingButton: ActionButton!
+    @IBOutlet weak var distributionButton: ActionButton!
+    @IBOutlet weak var communicationButton: ActionButton!
     @IBOutlet weak var shotButton: ActionButton!
-    @IBOutlet weak var passButton: ActionButton!
+    @IBOutlet weak var throughButton: ActionButton!
+    @IBOutlet weak var longButton: ActionButton!
+    @IBOutlet weak var shortButton: ActionButton!
+    
     @IBOutlet weak var player1Button: PlayerButton!
     @IBOutlet weak var player2Button: PlayerButton!
     @IBOutlet weak var player3Button: PlayerButton!
     @IBOutlet weak var player4Button: PlayerButton!
     
-    
-    var actionButtonArray:[ActionButton] = [ActionButton]()
-    var playerButtonArray:[PlayerButton] = [PlayerButton]()
     
     var selectedPlayerButton:PlayerButton?
     var selectedActionButton:ActionButton?
@@ -36,29 +38,20 @@ class GameViewController:UIViewController {
     var count:Int = 0
     
     var positionIsSelected:Bool = false
-    var isCircle:Bool = true
-    var arrow:CAShapeLayer = CAShapeLayer()
-    var startPoint:CGPoint = CGPoint()
-    var endPoint:CGPoint = CGPoint()
+    var point:CGPoint = CGPoint()
     
     override func viewDidLoad() {
         fieldImageView.isUserInteractionEnabled = true
         fieldImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didTapPosition)))
-        fieldImageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.didPanPosition)))
         
         successButton.addTarget(self, action: #selector(didSelectOutcome(_:)), for: .touchUpInside)
         failButton.addTarget(self, action: #selector(didSelectOutcome(_:)), for: .touchUpInside)
         
-//        actionButtonArray.append(assistButton)
-//        actionButtonArray.append(interceptionButton)
-//        actionButtonArray.append(headerButton)
-//        actionButtonArray.append(tackleButton)
-//        actionButtonArray.append(shotButton)
-//        actionButtonArray.append(passButton)
-//        
-//        for button in actionButtonArray {
-//            button.addTarget(self, action: #selector(didSelectButton(_:)), for: .touchUpInside)
-//        }
+        let actionButtonArray:[ActionButton] = [tacklingButton, dribblingButton, distributionButton, communicationButton, shotButton, throughButton, shortButton, longButton]
+        
+        for button in actionButtonArray {
+            button.addTarget(self, action: #selector(didSelectButton(_:)), for: .touchUpInside)
+        }
         
         
         if ActiveTeam.sharedInstance.activeTeam.count > 0 {
@@ -73,10 +66,8 @@ class GameViewController:UIViewController {
                 }
             }
         }
-        playerButtonArray.append(player1Button)
-        playerButtonArray.append(player2Button)
-        playerButtonArray.append(player3Button)
-        playerButtonArray.append(player4Button)
+        
+        var playerButtonArray:[PlayerButton] = [player1Button, player2Button, player3Button, player4Button]
         for button in playerButtonArray {
             button.addTarget(self, action: #selector(didSelectPlayer(_:)), for: .touchUpInside)
         }
@@ -150,7 +141,6 @@ class GameViewController:UIViewController {
     }
     
     @objc func didTapPosition(_ tapGestureRecognizer: UITapGestureRecognizer){
-        isCircle = true
         if !positionIsSelected {
             count += 1
         } else {
@@ -159,51 +149,9 @@ class GameViewController:UIViewController {
             }
         }
         let tappedImage = tapGestureRecognizer.view as! UIImageView
-        startPoint = tapGestureRecognizer.location(in: tappedImage)
+        point = tapGestureRecognizer.location(in: tappedImage)
         
-        CoreGraphicsHelper.init().drawCircle(selectedPosition: startPoint, tappedImage: tappedImage)
-        
-        if count == 4 {
-            save()
-        }
-    }
-    
-    @objc func didPanPosition(_ panGestureRecognizer: UIPanGestureRecognizer) {
-        isCircle = false
-        let location = panGestureRecognizer.location(in: fieldImageView)
-        var arrowPath:UIBezierPath = UIBezierPath()
-        
-        switch panGestureRecognizer.state {
-        case .began :
-
-            if !positionIsSelected {
-                count += 1
-            } else {
-                for layer in fieldImageView.layer.sublayers! {
-                    layer.removeFromSuperlayer()
-                }
-            }
-
-            startPoint = location
-            arrowPath = CoreGraphicsHelper.init().drawArrow(start: startPoint, end: CGPoint(x: startPoint.x+1, y: startPoint.y+1))
-            
-            let arrowShape = CAShapeLayer()
-            arrowShape.path = arrowPath.cgPath
-            arrowShape.fillColor = UIColor.blue.cgColor
-            arrowShape.strokeColor = UIColor.blue.cgColor
-            
-            arrow = arrowShape
-            fieldImageView.layer.addSublayer(arrow)
-        case .changed :
-            endPoint = location
-            arrowPath = CoreGraphicsHelper.init().drawArrow(start: startPoint, end: endPoint)
-            arrow.path = arrowPath.cgPath
-        case .ended :
-            endPoint = location
-            arrowPath = CoreGraphicsHelper.init().drawArrow(start: startPoint, end: endPoint)
-            arrow.path = arrowPath.cgPath
-        default: break
-        }
+        CoreGraphicsHelper.init().drawCircle(selectedPosition: point, tappedImage: tappedImage)
         
         if count == 4 {
             save()
@@ -211,7 +159,7 @@ class GameViewController:UIViewController {
     }
     
     func save() {
-        CoreDataHelper.init().addStat(ID: (selectedPlayerButton?.player?.objectID)!, startPoint: startPoint, endPoint: endPoint, statName: (selectedActionButton?.action)!, isCircle: isCircle)
+        CoreDataHelper.init().addStat(ID: (selectedPlayerButton?.player?.objectID)!, startPoint: point, statName: (selectedActionButton?.action)!)
     }
     
     @IBAction func clearSelection(_ sender: Any) {
@@ -221,7 +169,6 @@ class GameViewController:UIViewController {
                 layer.removeFromSuperlayer()
             }
             positionIsSelected = false
-            isCircle = false
         }
         if selectedActionButton != nil {
             selectedActionButton!.isSelected = false

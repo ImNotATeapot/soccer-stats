@@ -101,7 +101,7 @@ class CoreDataHelper{
         }
     }
     
-    func addStat(ID:NSManagedObjectID, startPoint:CGPoint, endPoint:CGPoint, statName:String, isCircle:Bool) {
+    func addStat(ID:NSManagedObjectID, startPoint:CGPoint, statName:String) {
         let pointEntity = NSEntityDescription.entity(forEntityName: "PointModel", in: managedContext)!
         let lineEntity = NSEntityDescription.entity(forEntityName: "LineModel", in: managedContext)!
         let statEntity = NSEntityDescription.entity(forEntityName: "StatModel", in: managedContext)!
@@ -112,19 +112,7 @@ class CoreDataHelper{
 
         let person:NSManagedObject = managedContext.object(with: ID)
         let stat:NSManagedObject = person.value(forKey: "hasStats") as! NSManagedObject
-        
-        if !isCircle {
-            let endPointObject:NSManagedObject = NSManagedObject(entity: pointEntity, insertInto: managedContext)
-            endPointObject.setValue(Float(endPoint.x), forKey: "coordX")
-            endPointObject.setValue(Float(endPoint.y), forKey: "coordY")
-            
-            let lineObject:NSManagedObject = NSManagedObject(entity: lineEntity, insertInto: managedContext)
-            lineObject.setValue(NSSet(objects: startPointObject, endPointObject), forKey: "hasPoints")
-            let lines = stat.mutableSetValue(forKey: "hasLines")
-            lines.add(lineObject)
-        } else {
-            let points = stat.mutableSetValue(forKey: "hasPoints")
-            points.add(startPointObject)
-        }
+        let points = stat.mutableSetValue(forKey: "hasPoints")
+        points.add(startPointObject)
     }
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B708E5DD1FF1F68500272B43 /* MyTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708E5DC1FF1F68500272B43 /* MyTeamViewController.swift */; };
+		B71DCC982008D1CA003695A3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DCC972008D1CA003695A3 /* MainViewController.swift */; };
+		B71DCC9A2008D2B2003695A3 /* ActionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DCC992008D2B2003695A3 /* ActionsTableViewController.swift */; };
 		B765507A2002176300FB5D57 /* PlayerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76550792002176300FB5D57 /* PlayerButton.swift */; };
 		B765507C20021B5200FB5D57 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765507B20021B5200FB5D57 /* PlayerCell.swift */; };
 		B7687E002005C07C00F7A969 /* PlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7687DFF2005C07C00F7A969 /* PlayersTableViewController.swift */; };
@@ -49,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		B708E5DC1FF1F68500272B43 /* MyTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamViewController.swift; sourceTree = "<group>"; };
+		B71DCC972008D1CA003695A3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B71DCC992008D2B2003695A3 /* ActionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsTableViewController.swift; sourceTree = "<group>"; };
 		B76550792002176300FB5D57 /* PlayerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerButton.swift; sourceTree = "<group>"; };
 		B765507B20021B5200FB5D57 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		B7687DFF2005C07C00F7A969 /* PlayersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B71DCC9B2008D79A003695A3 /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				B783DD0B1FB695D700F9EE33 /* GameViewController.swift */,
+				B71DCC992008D2B2003695A3 /* ActionsTableViewController.swift */,
+				B71DCC972008D1CA003695A3 /* MainViewController.swift */,
+			);
+			name = MainTab;
+			sourceTree = "<group>";
+		};
 		B77074041FB60C6600D7FBAE /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,7 +190,7 @@
 		B7D0542C1FB54EE10085DEA5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B783DD0B1FB695D700F9EE33 /* GameViewController.swift */,
+				B71DCC9B2008D79A003695A3 /* MainTab */,
 				B708E5DC1FF1F68500272B43 /* MyTeamViewController.swift */,
 				B7687DFF2005C07C00F7A969 /* PlayersTableViewController.swift */,
 				B77074021FB60C2100D7FBAE /* TabBarController.swift */,
@@ -353,12 +367,14 @@
 				B7687E002005C07C00F7A969 /* PlayersTableViewController.swift in Sources */,
 				B770740F1FB6345100D7FBAE /* SettingsViewController.swift in Sources */,
 				B77074081FB60D7300D7FBAE /* ActiveTeam.swift in Sources */,
+				B71DCC982008D1CA003695A3 /* MainViewController.swift in Sources */,
 				B77074061FB60CAD00D7FBAE /* CoreDataHelper.swift in Sources */,
 				B7D054331FB54FC80085DEA5 /* Player.swift in Sources */,
 				B765507A2002176300FB5D57 /* PlayerButton.swift in Sources */,
 				B765507C20021B5200FB5D57 /* PlayerCell.swift in Sources */,
 				B708E5DD1FF1F68500272B43 /* MyTeamViewController.swift in Sources */,
 				B770740D1FB60F0400D7FBAE /* NavBarController.swift in Sources */,
+				B71DCC9A2008D2B2003695A3 /* ActionsTableViewController.swift in Sources */,
 				B783DD0C1FB695D700F9EE33 /* GameViewController.swift in Sources */,
 				B7C413BD1FB52F7100A9763D /* soccer_stats.xcdatamodeld in Sources */,
 				B7F1C0EF1FB76BAF009C0B7A /* ActionButton.swift in Sources */,
