@@ -72,15 +72,8 @@ class MyTeamViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        _playersTableView.delegate = self
-        _playersTableView.dataSource = self
-        _newPlayerPosition.delegate = self
-        _newPlayerPosition.dataSource = self
-        _newPlayerNumber.delegate = self
-        _newPlayerNumber.dataSource = self
-        
-        _playerObjects = CoreDataHelper.init().fetch()
-        _playersTableView.reloadData()
+
+
         
         _player1Button.number = 0
         _player2Button.number = 1

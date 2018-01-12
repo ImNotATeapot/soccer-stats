@@ -9,15 +9,17 @@ import Foundation
 import UIKit
 import CoreData
 
-class PlayersTableViewController: UITableViewController {
+class PlayersTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var playersTableView: UITableView!
     
     let playerObjects:[NSManagedObject] = CoreDataHelper.init().fetch()
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return playerObjects.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:PlayerCell = tableView.dequeueReusableCell(withIdentifier: "playerCell") as! PlayerCell
         let player:NSManagedObject = playerObjects[indexPath.section]
         cell.player = player

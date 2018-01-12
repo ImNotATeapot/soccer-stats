@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="LineModel" representedClassName="LineModel" syncable="YES" codeGenerationType="class">
-        <relationship name="hasPoints" toMany="YES" minCount="2" maxCount="2" deletionRule="Cascade" ordered="YES" destinationEntity="PointModel" inverseName="inLine" inverseEntity="PointModel" syncable="YES"/>
-        <relationship name="isStat" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StatModel" inverseName="hasLines" inverseEntity="StatModel" syncable="YES"/>
-    </entity>
     <entity name="PlayerModel" representedClassName="PlayerModel" syncable="YES" codeGenerationType="class">
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,19 +10,19 @@
     <entity name="PointModel" representedClassName="PointModel" syncable="YES" codeGenerationType="class">
         <attribute name="coordX" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="coordY" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="inLine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LineModel" inverseName="hasPoints" inverseEntity="LineModel" syncable="YES"/>
-        <relationship name="isStat" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StatModel" inverseName="hasPoints" inverseEntity="StatModel" syncable="YES"/>
+        <attribute name="optionName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="optionNum" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="belongsToStat" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StatModel" inverseName="hasPoints" inverseEntity="StatModel" syncable="YES"/>
     </entity>
     <entity name="StatModel" representedClassName="StatModel" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numOptions" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="belongsToPlayer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlayerModel" inverseName="hasStats" inverseEntity="PlayerModel" syncable="YES"/>
-        <relationship name="hasLines" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LineModel" inverseName="isStat" inverseEntity="LineModel" syncable="YES"/>
-        <relationship name="hasPoints" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PointModel" inverseName="isStat" inverseEntity="PointModel" syncable="YES"/>
+        <relationship name="hasPoints" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PointModel" inverseName="belongsToStat" inverseEntity="PointModel" syncable="YES"/>
     </entity>
     <elements>
-        <element name="LineModel" positionX="-1568" positionY="-270" width="128" height="75"/>
         <element name="PlayerModel" positionX="-1523" positionY="-432" width="128" height="120"/>
-        <element name="PointModel" positionX="-1739" positionY="-252" width="128" height="105"/>
+        <element name="PointModel" positionX="-1739" positionY="-252" width="128" height="120"/>
         <element name="StatModel" positionX="-1685" positionY="-367" width="128" height="105"/>
     </elements>
 </model>

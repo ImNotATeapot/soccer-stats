@@ -49,16 +49,16 @@ class GameViewController:UIViewController {
         successButton.addTarget(self, action: #selector(didSelectOutcome(_:)), for: .touchUpInside)
         failButton.addTarget(self, action: #selector(didSelectOutcome(_:)), for: .touchUpInside)
         
-        actionButtonArray.append(assistButton)
-        actionButtonArray.append(interceptionButton)
-        actionButtonArray.append(headerButton)
-        actionButtonArray.append(tackleButton)
-        actionButtonArray.append(shotButton)
-        actionButtonArray.append(passButton)
-        
-        for button in actionButtonArray {
-            button.addTarget(self, action: #selector(didSelectButton(_:)), for: .touchUpInside)
-        }
+//        actionButtonArray.append(assistButton)
+//        actionButtonArray.append(interceptionButton)
+//        actionButtonArray.append(headerButton)
+//        actionButtonArray.append(tackleButton)
+//        actionButtonArray.append(shotButton)
+//        actionButtonArray.append(passButton)
+//        
+//        for button in actionButtonArray {
+//            button.addTarget(self, action: #selector(didSelectButton(_:)), for: .touchUpInside)
+//        }
         
         
         if ActiveTeam.sharedInstance.activeTeam.count > 0 {
