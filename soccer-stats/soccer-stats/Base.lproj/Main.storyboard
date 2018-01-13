@@ -118,6 +118,7 @@
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                                 <integer key="value" value="8"/>
                                                                             </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="self.action" value="&quot;tackling&quot;"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </button>
                                                                 </subviews>
@@ -267,6 +268,7 @@
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                                 <integer key="value" value="8"/>
                                                                             </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="self.action" value="shots"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </button>
                                                                 </subviews>
@@ -547,7 +549,7 @@
                         <outlet property="player3Button" destination="sNq-Ef-qsp" id="GNw-Ff-6q6"/>
                         <outlet property="player4Button" destination="ldW-Ae-eNd" id="mLt-Rc-tnH"/>
                         <outlet property="shortButton" destination="ARo-2x-2Xj" id="NCY-x6-a7d"/>
-                        <outlet property="shotButton" destination="1u5-ha-Ctv" id="Gnw-1Y-xFQ"/>
+                        <outlet property="shotButton" destination="cwp-Iv-a4s" id="HTx-un-Xil"/>
                         <outlet property="successButton" destination="50p-kx-FPR" id="ZUR-aS-i64"/>
                         <outlet property="tacklingButton" destination="1u5-ha-Ctv" id="8yC-iQ-cfo"/>
                         <outlet property="throughButton" destination="eHi-lO-ig3" id="IDZ-7o-oHE"/>
@@ -1382,10 +1384,10 @@
             </objects>
             <point key="canvasLocation" x="1528" y="583"/>
         </scene>
-        <!--View Controller-->
+        <!--Match Records View Controller-->
         <scene sceneID="ZzI-mI-2Ra">
             <objects>
-                <viewController storyboardIdentifier="MatchRecordsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nCA-bG-cKV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MatchRecordsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nCA-bG-cKV" customClass="MatchRecordsViewController" customModule="soccer_stats" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DRn-lO-xKv"/>
                         <viewControllerLayoutGuide type="bottom" id="bvH-UQ-jTV"/>
@@ -1612,6 +1614,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="usn-D5-1ro"/>
+                    <connections>
+                        <outlet property="fieldImageView" destination="Wg2-CW-oi1" id="geS-Xi-dxX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hR-8O-3bV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

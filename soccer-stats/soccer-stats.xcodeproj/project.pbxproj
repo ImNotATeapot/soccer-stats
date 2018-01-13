@@ -10,6 +10,7 @@
 		B708E5DD1FF1F68500272B43 /* MyTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B708E5DC1FF1F68500272B43 /* MyTeamViewController.swift */; };
 		B71DCC982008D1CA003695A3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DCC972008D1CA003695A3 /* MainViewController.swift */; };
 		B71DCC9A2008D2B2003695A3 /* ActionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DCC992008D2B2003695A3 /* ActionsTableViewController.swift */; };
+		B72080E0200A598D00F54898 /* MatchRecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72080DF200A598D00F54898 /* MatchRecordsViewController.swift */; };
 		B765507A2002176300FB5D57 /* PlayerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76550792002176300FB5D57 /* PlayerButton.swift */; };
 		B765507C20021B5200FB5D57 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765507B20021B5200FB5D57 /* PlayerCell.swift */; };
 		B7687E002005C07C00F7A969 /* PlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7687DFF2005C07C00F7A969 /* PlayersTableViewController.swift */; };
@@ -53,6 +54,7 @@
 		B708E5DC1FF1F68500272B43 /* MyTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamViewController.swift; sourceTree = "<group>"; };
 		B71DCC972008D1CA003695A3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B71DCC992008D2B2003695A3 /* ActionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsTableViewController.swift; sourceTree = "<group>"; };
+		B72080DF200A598D00F54898 /* MatchRecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRecordsViewController.swift; sourceTree = "<group>"; };
 		B76550792002176300FB5D57 /* PlayerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerButton.swift; sourceTree = "<group>"; };
 		B765507B20021B5200FB5D57 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		B7687DFF2005C07C00F7A969 /* PlayersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,15 @@
 				B71DCC972008D1CA003695A3 /* MainViewController.swift */,
 			);
 			name = MainTab;
+			sourceTree = "<group>";
+		};
+		B72080E1200A5A3200F54898 /* MatchRecordsTab */ = {
+			isa = PBXGroup;
+			children = (
+				B72080DF200A598D00F54898 /* MatchRecordsViewController.swift */,
+				B7687DFF2005C07C00F7A969 /* PlayersTableViewController.swift */,
+			);
+			name = MatchRecordsTab;
 			sourceTree = "<group>";
 		};
 		B77074041FB60C6600D7FBAE /* Utility */ = {
@@ -192,7 +203,7 @@
 			children = (
 				B71DCC9B2008D79A003695A3 /* MainTab */,
 				B708E5DC1FF1F68500272B43 /* MyTeamViewController.swift */,
-				B7687DFF2005C07C00F7A969 /* PlayersTableViewController.swift */,
+				B72080E1200A5A3200F54898 /* MatchRecordsTab */,
 				B77074021FB60C2100D7FBAE /* TabBarController.swift */,
 				B770740C1FB60F0400D7FBAE /* NavBarController.swift */,
 				B770740E1FB6345100D7FBAE /* SettingsViewController.swift */,
@@ -365,6 +376,7 @@
 				B7C413B51FB52F7100A9763D /* AppDelegate.swift in Sources */,
 				B77074031FB60C2100D7FBAE /* TabBarController.swift in Sources */,
 				B7687E002005C07C00F7A969 /* PlayersTableViewController.swift in Sources */,
+				B72080E0200A598D00F54898 /* MatchRecordsViewController.swift in Sources */,
 				B770740F1FB6345100D7FBAE /* SettingsViewController.swift in Sources */,
 				B77074081FB60D7300D7FBAE /* ActiveTeam.swift in Sources */,
 				B71DCC982008D1CA003695A3 /* MainViewController.swift in Sources */,

@@ -25,7 +25,30 @@ class CoreDataHelper{
         return arrayTemp
     }
     
+    func fetch(player:NSManagedObject, stat:String) -> [CGPoint] {
+        
+        var points:[CGPoint] = [CGPoint]()
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "StatModel")
+        let firstPredicate = NSPredicate(format: "belongsToPlayer == %@", player)
+        fetchRequest.predicate = firstPredicate
+        
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            for managedObject in result {
+                let coordX:CGFloat = CGFloat(managedObject.value(forKey: "coordX") as! Float)
+                let coordY:CGFloat = CGFloat(managedObject.value(forKey: "coordY") as! Float)
+                let point:CGPoint = CGPoint(x: coordX, y: coordY)
+                points.append(point)
+            }
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+        return points
+    }
+    
     func fetch(player:NSManagedObject) -> NSManagedObject{
+        //use sort descriptor fetch for ordering objects
         var object:NSManagedObject = NSManagedObject()
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "PlayerModel")
         
@@ -112,9 +135,30 @@ class CoreDataHelper{
         startPointObject.setValue(Float(startPoint.x), forKey: "coordX")
         startPointObject.setValue(Float(startPoint.y), forKey: "coordY")
 
-        let person:NSManagedObject = managedContext.object(with: ID)
-        let stat:NSManagedObject = person.value(forKey: "hasStats") as! NSManagedObject
-        let points = stat.mutableSetValue(forKey: "hasPoints")
-        points.add(startPointObject)
+        let player:NSManagedObject = managedContext.object(with: ID)
+        
+        //fetch stats
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "StatModel")
+        let firstPredicate = NSPredicate(format: "belongsToPlayer == %@", player)
+        let secondPredicate = NSPredicate(format: "name == %@", statName)
+        let compoundPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [firstPredicate, secondPredicate])
+        fetchRequest.predicate = compoundPredicate
+        var stat:NSManagedObject = NSManagedObject()
+        
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            stat = result[0]
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+        stat.mutableSetValue(forKey: "hasPoints").add(startPointObject)
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+            //TODO: implement alert
+        }
     }
 }

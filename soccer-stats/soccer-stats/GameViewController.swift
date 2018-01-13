@@ -41,7 +41,7 @@ class GameViewController:UIViewController {
     var point:CGPoint = CGPoint()
     
     override func viewDidLoad() {
-        
+        //clear stuff everytime it opens again
         if ActiveTeam.sharedInstance.activeTeam.count == 0 {
             let alert = UIAlertController(title: "No players selected", message: "Click OK to go to the players page", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {action in
@@ -62,7 +62,7 @@ class GameViewController:UIViewController {
             button.addTarget(self, action: #selector(didSelectButton(_:)), for: .touchUpInside)
         }
         
-        
+        //doesn't automatically appear.. TODO: CHECK THIS
         if ActiveTeam.sharedInstance.activeTeam.count > 0 {
             player1Button.player = ActiveTeam.sharedInstance.activeTeam[0]
             if ActiveTeam.sharedInstance.activeTeam.count > 1 {
@@ -83,15 +83,15 @@ class GameViewController:UIViewController {
     }
     
     @objc func didSelectButton(_ actionButton: ActionButton) {
-        if selectedActionButton != nil {
+        if let selectedActionButton = selectedActionButton {
             if actionButton.isSelected {
                 count -= 1
                 actionButton.isSelected = false
-                selectedActionButton = nil
+                self.selectedActionButton = nil
             } else {
                 actionButton.isSelected = true
-                selectedActionButton!.isSelected = false
-                selectedActionButton = actionButton
+                self.selectedActionButton!.isSelected = false
+                self.selectedActionButton = actionButton
             }
         } else {
             count += 1
@@ -105,15 +105,15 @@ class GameViewController:UIViewController {
     }
     
     @objc func didSelectOutcome(_ outcomeButton: ActionButton) {
-        if selectedOutcomeButton != nil{
+        if let selectedOutcomeButton = selectedOutcomeButton {
             if outcomeButton.isSelected {
                 count -= 1
                 outcomeButton.isSelected = false
-                selectedActionButton = nil
+                self.selectedActionButton = nil
             } else {
                 outcomeButton.isSelected = true
-                selectedOutcomeButton!.isSelected = false
-                selectedOutcomeButton = outcomeButton
+                self.selectedOutcomeButton!.isSelected = false
+                self.selectedOutcomeButton = outcomeButton
             }
         } else {
             count += 1
@@ -150,14 +150,17 @@ class GameViewController:UIViewController {
     }
     
     @objc func didTapPosition(_ tapGestureRecognizer: UITapGestureRecognizer){
+        
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
         if !positionIsSelected {
             count += 1
+            positionIsSelected = true
         } else {
-            for layer in fieldImageView.layer.sublayers! {
+            for layer in tappedImage.layer.sublayers! {
                 layer.removeFromSuperlayer()
             }
         }
-        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        
         point = tapGestureRecognizer.location(in: tappedImage)
         
         CoreGraphicsHelper.init().drawCircle(selectedPosition: point, tappedImage: tappedImage)
@@ -168,7 +171,11 @@ class GameViewController:UIViewController {
     }
     
     func save() {
-        CoreDataHelper.init().addStat(ID: (selectedPlayerButton?.player?.objectID)!, startPoint: point, statName: (selectedActionButton?.action)!)
+        //nil unwrapping
+        let objectID:NSManagedObjectID = selectedPlayerButton!.player!.objectID
+        let statName:String = selectedActionButton!.action!
+        CoreDataHelper.init().addStat(ID: objectID, startPoint: point, statName: statName)
+        clearSelection(self)
     }
     
     @IBAction func clearSelection(_ sender: Any) {

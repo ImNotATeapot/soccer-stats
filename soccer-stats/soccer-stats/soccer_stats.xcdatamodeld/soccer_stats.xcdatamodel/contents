@@ -5,7 +5,7 @@
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="position" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="hasStats" optional="YES" toMany="YES" minCount="6" maxCount="6" deletionRule="Cascade" destinationEntity="StatModel" inverseName="belongsToPlayer" inverseEntity="StatModel" syncable="YES"/>
+        <relationship name="hasStats" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StatModel" inverseName="belongsToPlayer" inverseEntity="StatModel" syncable="YES"/>
     </entity>
     <entity name="PointModel" representedClassName="PointModel" syncable="YES" codeGenerationType="class">
         <attribute name="coordX" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -21,7 +21,7 @@
         <relationship name="hasPoints" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PointModel" inverseName="belongsToStat" inverseEntity="PointModel" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PlayerModel" positionX="-1523" positionY="-432" width="128" height="120"/>
+        <element name="PlayerModel" positionX="-1523" positionY="-432" width="128" height="118"/>
         <element name="PointModel" positionX="-1739" positionY="-252" width="128" height="120"/>
         <element name="StatModel" positionX="-1685" positionY="-367" width="128" height="105"/>
     </elements>

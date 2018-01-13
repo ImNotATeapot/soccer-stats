@@ -37,4 +37,10 @@ class PlayersTableViewController: UIViewController, UITableViewDelegate, UITable
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedPlayer:NSManagedObject = playerObjects[indexPath.section]
+        let viewController:MatchRecordsViewController = self.parent as! MatchRecordsViewController
+        viewController.selectedPlayer = selectedPlayer
+    }
 }
