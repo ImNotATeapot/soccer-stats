@@ -78,20 +78,24 @@ class CoreDataHelper{
         person.setValue(number, forKeyPath: "number")
         
         let statEntity = NSEntityDescription.entity(forEntityName: "StatModel", in: managedContext)!
-        let passStatObject = NSManagedObject(entity: statEntity, insertInto: managedContext)
-        passStatObject.setValue("pass", forKey: "name")
-        let tackleStatObject = NSManagedObject(entity: statEntity, insertInto: managedContext)
-        tackleStatObject.setValue("tackle", forKey: "name")
-        let headerStatObject = NSManagedObject(entity: statEntity, insertInto: managedContext)
-        headerStatObject.setValue("header", forKey: "name")
-        let goalStatObject = NSManagedObject(entity: statEntity, insertInto: managedContext)
-        goalStatObject.setValue("goal", forKey: "name")
-        let interceptionStatObject = NSManagedObject(entity: statEntity, insertInto: managedContext)
-        interceptionStatObject.setValue("interception", forKey: "name")
-        let assistStatObject = NSManagedObject(entity: statEntity, insertInto: managedContext)
-        assistStatObject.setValue("assist", forKey: "name")
+        let tacklesStatObject = NSManagedObject(entity: statEntity, insertInto: managedContext)
+        tacklesStatObject.setValue("tackles", forKey: "name")
+        let shotsStatObject = NSManagedObject(entity: statEntity, insertInto: managedContext)
+        shotsStatObject.setValue("shots", forKey: "name")
+        let dribblingStatObject = NSManagedObject(entity: statEntity, insertInto: managedContext)
+        dribblingStatObject.setValue("dribbling", forKey: "name")
+        let distributionStatObject = NSManagedObject(entity: statEntity, insertInto: managedContext)
+        distributionStatObject.setValue("distribution", forKey: "name")
+        let communicationStatObject = NSManagedObject(entity: statEntity, insertInto: managedContext)
+        communicationStatObject.setValue("communication", forKey: "name")
+        let throughStatObject = NSManagedObject(entity: statEntity, insertInto: managedContext)
+        throughStatObject.setValue("through", forKey: "name")
+        let shortStatObject = NSManagedObject(entity: statEntity, insertInto: managedContext)
+        shortStatObject.setValue("short", forKey: "name")
+        let longStatObject = NSManagedObject(entity: statEntity, insertInto: managedContext)
+        longStatObject.setValue("long", forKey: "name")
         
-        person.setValue(NSSet(objects: passStatObject, tackleStatObject, headerStatObject, goalStatObject, interceptionStatObject, assistStatObject), forKey: "hasStats")
+        person.setValue(NSSet(objects: tacklesStatObject, shotsStatObject, dribblingStatObject, distributionStatObject, communicationStatObject, throughStatObject, shortStatObject, longStatObject), forKey: "hasStats")
         
         do {
             try managedContext.save()
@@ -103,8 +107,6 @@ class CoreDataHelper{
     
     func addStat(ID:NSManagedObjectID, startPoint:CGPoint, statName:String) {
         let pointEntity = NSEntityDescription.entity(forEntityName: "PointModel", in: managedContext)!
-        let lineEntity = NSEntityDescription.entity(forEntityName: "LineModel", in: managedContext)!
-        let statEntity = NSEntityDescription.entity(forEntityName: "StatModel", in: managedContext)!
 
         let startPointObject:NSManagedObject = NSManagedObject(entity: pointEntity, insertInto: managedContext)
         startPointObject.setValue(Float(startPoint.x), forKey: "coordX")

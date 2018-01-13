@@ -25,13 +25,51 @@ class MyTeamViewController: UIViewController {
     @IBOutlet weak var _cancelNewPlayerButton: UIButton!
     @IBOutlet weak var _confirmNewPlayerButton: UIButton!
     
+    @IBOutlet weak var noPlayersLabel: UILabel!
     @IBOutlet weak var _playersTableView: UITableView!
     
-    let _positions:[String] = ["Forward", "Midfielder", "GoalKeeper"]
+    let positions:[String] = ["Forward", "Midfielder", "GoalKeeper"]
     var playerButtonArray:[PlayerButton] = []
+    
+    override func viewDidLoad() {
+        
+        _playerObjects = CoreDataHelper.init().fetch()
+        if _playerObjects.count == 0 {
+            noPlayersLabel.isHidden = false
+        } else {
+            noPlayersLabel.isHidden = true
+        }
+        
+        _player1Button.number = 0
+        _player2Button.number = 1
+        _player3Button.number = 2
+        _player4Button.number = 3
+        
+        if ActiveTeam.sharedInstance.activeTeam.count > 0 {
+            _player1Button.player = ActiveTeam.sharedInstance.activeTeam[0]
+            if ActiveTeam.sharedInstance.activeTeam.count > 1 {
+                _player2Button.player = ActiveTeam.sharedInstance.activeTeam[1]
+                if ActiveTeam.sharedInstance.activeTeam.count > 2 {
+                    _player3Button.player = ActiveTeam.sharedInstance.activeTeam[2]
+                    if ActiveTeam.sharedInstance.activeTeam.count > 3 {
+                        _player4Button.player = ActiveTeam.sharedInstance.activeTeam[3]
+                    }
+                }
+            }
+        }
+        
+        playerButtonArray.append(_player1Button)
+        playerButtonArray.append(_player2Button)
+        playerButtonArray.append(_player3Button)
+        playerButtonArray.append(_player4Button)
+        for playerButton in playerButtonArray {
+            playerButton.addTarget(self, action: #selector(didSelectPlayerButton(_:)), for: .touchUpInside)
+        }
+    }
     
     @IBAction func addPlayer(_ sender: Any) {
         hideNewPlayer(hide:false)
+        noPlayersLabel.isHidden = true
     }
     
     @IBAction func deletePlayer(_ sender: Any) {
@@ -42,10 +80,9 @@ class MyTeamViewController: UIViewController {
     @IBAction func confirmNewPlayer(_ sender: Any) {
         if let name = _newPlayerName.text {
             if let index = name.index(of: " ") {
-                let nextIndex:String.Index? = name.index(after: index)
                 let firstName:String = String(name[..<index])
                 let lastName:String = String(name[index...])
-                let position:String = _positions[_newPlayerPosition.selectedRow(inComponent: 0)]
+                let position:String = positions[_newPlayerPosition.selectedRow(inComponent: 0)]
                 let number:Int = _newPlayerNumber.selectedRow(inComponent: 0) + 1
                 
                 CoreDataHelper.init().save(first: firstName, last: lastName, position: position, number: number)
@@ -71,43 +108,7 @@ class MyTeamViewController: UIViewController {
         _newPlayerName.text = nil
     }
     
-    override func viewDidLoad() {
-
-
-        
-        _player1Button.number = 0
-        _player2Button.number = 1
-        _player3Button.number = 2
-        _player4Button.number = 3
-        
-        if ActiveTeam.sharedInstance.activeTeam.count > 0 {
-            _player1Button.player = ActiveTeam.sharedInstance.activeTeam[0]
-            if ActiveTeam.sharedInstance.activeTeam.count > 1 {
-                _player2Button.player = ActiveTeam.sharedInstance.activeTeam[1]
-                if ActiveTeam.sharedInstance.activeTeam.count > 2 {
-                    _player3Button.player = ActiveTeam.sharedInstance.activeTeam[2]
-                    if ActiveTeam.sharedInstance.activeTeam.count > 3 {
-                        _player4Button.player = ActiveTeam.sharedInstance.activeTeam[3]
-                    }
-                }
-            }
-        }
-
-        
-        if _playerObjects.count == 0 {
-            let alert = UIAlertController(title: "No players", message: "You can add a player by selecting the + sign above", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-        
-        playerButtonArray.append(_player1Button)
-        playerButtonArray.append(_player2Button)
-        playerButtonArray.append(_player3Button)
-        playerButtonArray.append(_player4Button)
-        for playerButton in playerButtonArray {
-            playerButton.addTarget(self, action: #selector(didSelectPlayerButton(_:)), for: .touchUpInside)
-        }
-    }
+    
     
     @objc func didSelectPlayerButton(_ playerButton: PlayerButton) {
         if playerButton.player != nil {
@@ -175,20 +176,21 @@ extension MyTeamViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:PlayerCell = tableView.dequeueReusableCell(withIdentifier: "playerCell") as! PlayerCell
-        let player:NSManagedObject = _playerObjects[indexPath.section]
-        cell.player = player
-        if let numLabel:UILabel = cell.viewWithTag(1) as? UILabel {
-            let number:Int = player.value(forKey: "number") as? Int ?? 0
-            numLabel.text = "\(number)"
-        }
-        if let positionLabel:UILabel = cell.viewWithTag(2) as? UILabel {
-            positionLabel.text = player.value(forKey: "position") as? String
-        }
-        if let nameLabel:UILabel = cell.viewWithTag(3) as? UILabel {
-            let firstName:String = player.value(forKey: "firstName") as? String ?? ""
-            let lastName:String = player.value(forKey: "lastName") as? String ?? ""
-            nameLabel.text = lastName + " " + firstName
-        }
+        
+            let player:NSManagedObject = _playerObjects[indexPath.section]
+            cell.player = player
+            if let numLabel:UILabel = cell.viewWithTag(1) as? UILabel {
+                let number:Int = player.value(forKey: "number") as? Int ?? 0
+                numLabel.text = "\(number)"
+            }
+            if let positionLabel:UILabel = cell.viewWithTag(2) as? UILabel {
+                positionLabel.text = player.value(forKey: "position") as? String
+            }
+            if let nameLabel:UILabel = cell.viewWithTag(3) as? UILabel {
+                let firstName:String = player.value(forKey: "firstName") as? String ?? ""
+                let lastName:String = player.value(forKey: "lastName") as? String ?? ""
+                nameLabel.text = lastName + " " + firstName
+            }
         return cell
     }
     
@@ -257,7 +259,7 @@ extension MyTeamViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         if pickerView.tag == 1 {
             return 99
         } else if pickerView.tag == 2 {
-            return _positions.count
+            return positions.count
         }
         return 0
     }
@@ -266,7 +268,7 @@ extension MyTeamViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         if pickerView.tag == 1 {
             return String(row + 1)
         } else if pickerView.tag == 2 {
-            return _positions[row]
+            return positions[row]
         }
         return ""
     }

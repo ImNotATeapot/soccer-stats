@@ -41,6 +41,15 @@ class GameViewController:UIViewController {
     var point:CGPoint = CGPoint()
     
     override func viewDidLoad() {
+        
+        if ActiveTeam.sharedInstance.activeTeam.count == 0 {
+            let alert = UIAlertController(title: "No players selected", message: "Click OK to go to the players page", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {action in
+                self.tabBarController?.selectedViewController = self.tabBarController!.viewControllers?[1]
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
         fieldImageView.isUserInteractionEnabled = true
         fieldImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didTapPosition)))
         
@@ -48,7 +57,7 @@ class GameViewController:UIViewController {
         failButton.addTarget(self, action: #selector(didSelectOutcome(_:)), for: .touchUpInside)
         
         let actionButtonArray:[ActionButton] = [tacklingButton, dribblingButton, distributionButton, communicationButton, shotButton, throughButton, shortButton, longButton]
-        
+
         for button in actionButtonArray {
             button.addTarget(self, action: #selector(didSelectButton(_:)), for: .touchUpInside)
         }
@@ -67,7 +76,7 @@ class GameViewController:UIViewController {
             }
         }
         
-        var playerButtonArray:[PlayerButton] = [player1Button, player2Button, player3Button, player4Button]
+        let playerButtonArray:[PlayerButton] = [player1Button, player2Button, player3Button, player4Button]
         for button in playerButtonArray {
             button.addTarget(self, action: #selector(didSelectPlayer(_:)), for: .touchUpInside)
         }

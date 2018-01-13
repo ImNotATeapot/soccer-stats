@@ -20,9 +20,9 @@ class ActionsTableViewController:UITableViewController {
                 parent.performSegue(withIdentifier: "toGameViewController", sender: parent)
             case 2:
                 if indexPath.row == 0 {
-                    self.tabBarController?.selectedViewController = tabBarController!.viewControllers?[2]
-                } else if indexPath.row == 1 {
                     self.tabBarController?.selectedViewController = tabBarController!.viewControllers?[1]
+                } else if indexPath.row == 1 {
+                    self.tabBarController?.selectedViewController = tabBarController!.viewControllers?[2]
                 }
             default: break
             }
